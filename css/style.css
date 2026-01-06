@@ -237,6 +237,9 @@ p.subtitle {
     color: inherit;
     position: relative;
     overflow: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
 }
 
 .glass-card:hover {
@@ -399,6 +402,21 @@ p.subtitle {
 
     .hero-container {
         height: 250px;
+    }
+
+    /* Fix navigation controls on mobile */
+    .nav-controls {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+
+    .nav-button,
+    .back-button {
+        min-width: unset;
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 0.9rem;
     }
 }
 
