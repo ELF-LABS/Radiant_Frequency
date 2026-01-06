@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Narrative | Radiant Frequency</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="theme-soul">
+    <div class="container">
+        <div class="hero-container">
+            <img src="../assets/images/soul_hero.png" alt="Soul Hero" class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="nav-controls">
+            <a href="physical.html" class="nav-button">← VII. Physical</a>
+            <a href="../index.html" class="back-button" style="margin-bottom: 0;">❖ Return to Lattice</a>
+            <a href="reciprocity.html" class="nav-button">IX. Reciprocity →</a>
+        </div>
+
+        <header style="text-align: center; margin-bottom: 50px;">
+            <h1 class="page-title">COMMUNICATION</h1>
+            <p class="subtitle">"Making the Complex Understandable."</p>
+        </header>
+
+        <section class="content-section">
+            <h2 style="color: var(--seafoam); margin-bottom: 20px;">The Heart of Communication</h2>
+            <p style="line-height: 1.6; font-size: 1.1rem; margin-bottom: 30px;">
+                You've built something amazing. Now how do you explain it?
+                <br><br>
+                This is where <strong>complexity becomes clarity</strong>. It's the layer that takes all the technical
+                pieces—the sensors, the code, the data—and turns them into something people can actually understand and
+                use.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2 style="color: var(--seafoam); margin-bottom: 20px;">What This Layer Does</h2>
+
+            <div
+                style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid var(--seafoam);">
+                <h3 style="color: var(--text-gold); margin-bottom: 15px;">📖 Documentation That Makes Sense</h3>
+                <p style="line-height: 1.8; opacity: 0.9;">
+                    Remember when you spent hours trying to figure out how to use a library because the docs were
+                    terrible? This fixes that.
+                    <br><br>
+                    It looks at your code and generates documentation that actually explains what things do, why they
+                    matter, and how to use them. Not just "this function takes parameters X and Y"—but "here's what this
+                    solves and here's how you'd actually use it."
+                </p>
+            </div>
+
+            <div
+                style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #ff00ff;">
+                <h3 style="color: var(--text-gold); margin-bottom: 15px;">🎨 Design That Guides</h3>
+                <p style="line-height: 1.8; opacity: 0.9;">
+                    You know how some interfaces just <em>make sense</em>? That's intentional design.
+                    <br><br>
+                    This creates visual systems that help people navigate complexity. High-contrast layouts so you can
+                    actually read things. Icons that mean what they look like. Color coding that makes patterns obvious.
+                    It's not about looking pretty—it's about making things <strong>usable</strong>.
+                </p>
+            </div>
+
+            <div
+                style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #ff2975;">
+                <h3 style="color: var(--text-gold); margin-bottom: 15px;">💬 Translation That Connects</h3>
+                <p style="line-height: 1.8; opacity: 0.9;">
+                    Your garden sensor data is in JSON. Your grandma speaks Spanish. This bridges that gap.
+                    <br><br>
+                    It translates technical concepts into plain language. It adapts tone based on who's
+                    reading—technical specs for developers, friendly guides for users, simple explanations for anyone
+                    just trying to understand what's happening.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 style="color: var(--seafoam); margin-bottom: 20px;">Why This Matters</h2>
+            <p style="line-height: 1.6; font-size: 1.1rem; margin-bottom: 30px;">
+                The best technology in the world is useless if people can't understand it.
+                <br><br>
+                <a href="science.html" style="color: var(--seafoam); text-decoration: underline;">Science</a> gives you
+                the sensors. <a href="physical.html" style="color: #ff2975; text-decoration: underline;">Physical</a>
+                tracks your movement. <a href="arts.html" style="color: #ff00ff; text-decoration: underline;">Arts</a>
+                visualizes the data.
+                <br><br>
+                <strong>This layer makes sure you actually understand what it all means.</strong>
+            </p>
+
+            <div
+                style="background: rgba(41, 255, 198, 0.1); padding: 25px; border-radius: 12px; border: 1px dashed var(--seafoam); text-align: center; margin-top: 30px;">
+                <p style="line-height: 1.8; font-size: 1.05rem;">
+                    <strong>Documentation isn't an afterthought.</strong><br>
+                    Communication isn't a nice-to-have.<br>
+                    Design isn't just aesthetics.<br>
+                    <br>
+                    <em style="color: var(--text-gold);">They're how we make technology accessible to everyone.</em>
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Mirror top navigation to bottom
+        const topNav = document.querySelector('.nav-controls');
+        if (topNav) {
+            const bottomNav = topNav.cloneNode(true);
+            bottomNav.style.marginTop = '60px';
+            document.querySelector('.container').appendChild(bottomNav);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In Development | Radiant Frequency</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            border-color: var(--seafoam);
+            background: rgba(41, 255, 198, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .feature-category {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            color: var(--text-gold);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .feature-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4rem;
+            color: var(--seafoam);
+            margin-bottom: 10px;
+        }
+
+        .feature-date {
+            display: inline-block;
+            background: rgba(157, 78, 221, 0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #e0d4fc;
+            margin-bottom: 15px;
+            border: 1px solid rgba(157, 78, 221, 0.3);
+        }
+
+        .feature-desc {
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--seafoam), #9d4edd);
+        }
+
+        .collab-card {
+            border-color: var(--text-gold);
+            background: rgba(255, 215, 0, 0.05);
+        }
+
+        .collab-card:hover {
+            border-color: #fff;
+            background: rgba(255, 215, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="theme-development">
+    <div class="container">
+        <div class="hero-container">
+            <img src="../assets/images/development_hero.png" alt="Development Hero" class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="nav-controls">
+            <a href="reciprocity.html" class="nav-button">← IX. Reciprocity</a>
+            <a href="../index.html" class="back-button" style="margin-bottom: 0;">❖ Return to Lattice</a>
+            <a href="donate.html" class="nav-button">XI. Support →</a>
+        </div>
+
+        <header style="text-align: center; margin-bottom: 50px;">
+            <h1 class="page-title">IN DEVELOPMENT</h1>
+            <p class="subtitle">"We are building the bridge while crossing it."</p>
+        </header>
+
+        <section class="content-section">
+            <h2 style="color: var(--seafoam); margin-bottom: 20px;">The Roadmap</h2>
+            <p style="line-height: 1.6; font-size: 1.1rem;">
+                The Radiant Frequency is an evolving system. Below are the features currently in the <strong>Active
+                    Development Phase</strong>, sorted by release velocity.
+            </p>
+
+            <div class="feature-grid">
+
+                <!-- 1. SENSORS & CAMERAS (Q1 2026 - 70%) -->
+                <div class="feature-card">
+                    <span class="feature-category">Science + Physical</span>
+                    <div class="feature-title">Sensor & Camera Integration</div>
+                    <span class="feature-date">Expected Q1 2026</span>
+                    <p class="feature-desc">
+                        Connect cameras, LiDAR, and biometric sensors for movement tracking, health monitoring, and
+                        garden automation. We have the data pipeline—now making it plug-and-play.
+                    </p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 70%;"></div>
+                    </div>
+                </div>
+
+                <!-- 2. HEALTH MONITORING DASHBOARD (Q1 2026 - 60%) -->
+                <div class="feature-card">
+                    <span class="feature-category">Physical + Arts</span>
+                    <div class="feature-title">Health Monitoring Dashboard</div>
+                    <span class="feature-date">Expected Q1 2026</span>
+                    <p class="feature-desc">
+                        Visualize vital signs, biomarkers, and movement patterns. Turn sensor data into beautiful,
+                        understandable feedback for everyone.
+                    </p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 60%;"></div>
+                    </div>
+                </div>
+
+                <!-- 3. DOCUMENTATION AUTOMATION (Q1 2026 - 80%) -->
+                <div class="feature-card">
+                    <span class="feature-category">Communication</span>
+                    <div class="feature-title">Auto-Documentation System</div>
+                    <span class="feature-date">Expected Q1 2026</span>
+                    <p class="feature-desc">
+                        Automatically generate READMEs and attribution headers for all 1,533 scripts. We have the
+                        Observer Bot—now making it continuous and real-time.
+                    </p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 80%;"></div>
+                    </div>
+                </div>
+
+                <!-- 4. MOTION CAPTURE TOOLS (Q2 2026 - 50%) -->
+                <div class="feature-card">
+                    <span class="feature-category">Physical</span>
+                    <div class="feature-title">Motion Capture & Form Analysis</div>
+                    <span class="feature-date">Expected Q2 2026</span>
+                    <p class="feature-desc">
+                        Use phone cameras and webcams for pose estimation, gait analysis, and posture correction. Making
+                        movement tracking accessible to everyone.
+                    </p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 50%;"></div>
+                    </div>
+                </div>
+
+                <!-- 5. GARDEN SENSOR NETWORK (Q2 2026 - 40%) -->
+                <div class="feature-card">
+                    <span class="feature-category">Science</span>
+                    <div class="feature-title">Garden Sensor Network</div>
+                    <span class="feature-date">Expected Q2 2026</span>
+                    <p class="feature-desc">
+                        Soil moisture, temperature, light sensors for smart gardening. Track your plants' health and get
+                        watering recommendations.
+                    </p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 40%;"></div>
+                    </div>
+                </div>
+
+                <!-- 6. COLLABORATIVE ART TOOLS (Q2 2026 - 45%) -->
+                <div class="feature-card">
+                    <span class="feature-category">Arts</span>
+                    <div class="feature-title">Collaborative Creative Tools</div>
+                    <span class="feature-date">Expected Q2 2026</span>
+                    <p class="feature-desc">
+                        Real-time collaborative murals, community compositions, and shared dream journals. Safe space to
+                        create together.
+                    </p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 45%;"></div>
+                    </div>
+                </div>
+
+                <!-- 7. MULTI-LANGUAGE DOCS (Q2 2026 - 60%) -->
+                <div class="feature-card">
+                    <span class="feature-category">Communication</span>
+                    <div class="feature-title">Multi-Language Documentation</div>
+                    <span class="feature-date">Expected Q2 2026</span>
+                    <p class="feature-desc">
+                        Translate documentation into multiple languages automatically. Making science and tech
+                        accessible globally.
+                    </p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 60%;"></div>
+                    </div>
+                </div>
+
+                <!-- 8. COMPANION SYSTEM (Q2 2026 - 65%) -->
+                <div class="feature-card">
+                    <span class="feature-category">Limbic Sonar</span>
+                    <div class="feature-title">Companion Collection System</div>
+                    <span class="feature-date">Expected Q2 2026</span>
+                    <p class="feature-desc">
+                        A creature collection system with 770+ variants. Gain new companions and evolutions as you learn
+                        new things in science, art, or physical—or when you unlock new archetypes. They grow with you.
+                    </p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 65%;"></div>
+                    </div>
+                </div>
+
+                <!-- 9. ADAPTIVE EQUIPMENT TUNING (Q3 2026 - 30%) -->
+                <div class="feature-card">
+                    <span class="feature-category">Physical</span>
+                    <div class="feature-title">Adaptive Equipment Tuning</div>
+                    <span class="feature-date">Expected Q3 2026</span>
+                    <p class="feature-desc">
+                        Optimize wheelchairs, prosthetics, and mobility aids using motion capture and sensor data.
+                        Personalized movement support.
+                    </p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 30%;"></div>
+                    </div>
+                </div>
+
+                <!-- 10. COMMUNITY PLATFORM (Q3 2026 - 25%) -->
+                <a href="donate.html" style="text-decoration: none; color: inherit;">
+                    <div class="feature-card collab-card">
+                        <span class="feature-category" style="color: #fff;">Community</span>
+                        <div class="feature-title" style="color: var(--text-gold);">Community Platform</div>
+                        <span class="feature-date"
+                            style="background: rgba(255, 215, 0, 0.2); color: var(--text-gold); border-color: var(--text-gold);">Expected
+                            Q3 2026</span>
+                        <p class="feature-desc">
+                            Connect with others working on similar projects. Share sensors, collaborate on art, learn
+                            together. Built on reciprocity.
+                        </p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 25%; background: var(--text-gold);"></div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+            <div
+                style="margin-top: 50px; padding: 30px; background: rgba(41, 255, 198, 0.05); border-radius: 16px; text-align: center; border: 1px dashed var(--seafoam);">
+                <h3 style="color: var(--text-gold); margin-bottom: 15px; font-family: 'Cinzel', serif;">Want to
+                    Accelerate Development?</h3>
+                <p style="margin-bottom: 20px;">The Radiant Frequency is built on Reciprocity.</p>
+                <a href="reciprocity.html" class="glass-card"
+                    style="display: inline-block; width: auto; padding: 15px 40px;">→ Join the Reciprocity Ledger</a>
+            </div>
+
+        </section>
+    </div>
+
+    <script>
+        // Mirror top navigation to bottom
+        const topNav = document.querySelector('.nav-controls');
+        if (topNav) {
+            const bottomNav = topNav.cloneNode(true);
+            bottomNav.style.marginTop = '60px';
+            document.querySelector('.container').appendChild(bottomNav);
+        }
+    </script>
+</body>
+
+</html>

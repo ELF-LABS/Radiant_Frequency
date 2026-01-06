@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reciprocity Ledger | Radiant Frequency</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .giant-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .giant-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .giant-card:hover {
+            border-color: var(--seafoam);
+            background: rgba(41, 255, 198, 0.05);
+        }
+
+        .giant-name {
+            color: var(--seafoam);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: block;
+            font-family: 'Cinzel', serif;
+        }
+    </style>
+</head>
+
+<body class="theme-reciprocity">
+    <div class="container">
+        <div class="hero-container">
+            <img src="../assets/images/reciprocity_hero.png" alt="Reciprocity Hero" class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="nav-controls">
+            <a href="soul.html" class="nav-button">← VIII. Communication</a>
+            <a href="../index.html" class="nav-button">❖ Return to Lattice</a>
+            <a href="development.html" class="nav-button">X. Development →</a>
+        </div>
+
+        <header style="text-align: center; margin-bottom: 50px;">
+            <h1 class="page-title">THE RECIPROCITY LEDGER</h1>
+            <p class="subtitle">"We Stand on the Shoulders of Giants."</p>
+        </header>
+
+        <section class="content-section">
+            <h2 style="color: var(--seafoam); margin-bottom: 20px; text-align: center;">A Letter to the Visionaries</h2>
+            <div
+                style="font-size: 1.2rem; line-height: 1.8; color: var(--text-light); text-align: center; max-width: 800px; margin: 0 auto;">
+                <p>
+                    This is a thank you letter to everyone in the world: the visionaries, the makers, the builders, and
+                    all those that dare to dream.
+                </p>
+                <p>
+                    To those who write the code, who till the soil, who paint the canvas, and who nurture the future.
+                    You are the architects of the possible. Your courage fuels our own.
+                    In this web of light, every node matters, and every contribution ripples through eternity.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-section" style="text-align: center; margin-top: 60px;">
+            <div style="border-top: 1px solid var(--glass-border); padding-top: 40px; width: 80%; margin: 0 auto;">
+                <h3 style="color: var(--text-light); margin-bottom: 15px;">Dedicated To</h3>
+                <h2 style="font-size: 2.5rem; color: var(--text-gold); text-shadow: var(--neon-glow);">My Family<br>And
+                    Most of All, My Daughters</h2>
+                <p style="margin-top: 20px; font-style: italic; opacity: 0.9; font-size: 1.2rem;">
+                    "You are the reason for everything I do.<br>
+                    I love you more than all the stars in the sky.<br>
+                    This is for you."
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Mirror top navigation to bottom
+        const topNav = document.querySelector('.nav-controls');
+        if (topNav) {
+            const bottomNav = topNav.cloneNode(true);
+            bottomNav.style.marginTop = '60px';
+            document.querySelector('.container').appendChild(bottomNav);
+        }
+    </script>
+</body>
+
+</html>

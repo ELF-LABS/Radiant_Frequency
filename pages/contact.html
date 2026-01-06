@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Radiant Frequency</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="theme-contact">
+    <div class="container">
+        <div class="hero-container">
+            <img src="../assets/images/contact_hero.png" alt="Contact Hero" class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="nav-controls">
+            <a href="donate.html" class="nav-button">← XI. Donate</a>
+            <a href="../index.html" class="back-button" style="margin-bottom: 0;">❖ Return to Lattice</a>
+            <a href="faq.html" class="nav-button">XIII. FAQ →</a>
+        </div>
+
+        <header style="text-align: center; margin-bottom: 50px;">
+            <h1 class="page-title">CONTACT & FEEDBACK</h1>
+            <p class="subtitle">"The Signal Must Flow. We Are Listening."</p>
+        </header>
+
+        <section class="content-section">
+            <h2 style="margin-bottom: 20px;">Open Frequencies</h2>
+            <p style="line-height: 1.6; font-size: 1.1rem; margin-bottom: 30px;">
+                The Radiant Frequency is a living system. We value direct, human-to-human (and human-to-AI) connection.
+                The lines are open.
+            </p>
+
+            <!-- Communication Lines -->
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 40px;">
+                <a href="mailto:support@radiantfrequency.xyz" class="glass-card" style="text-decoration: none;">
+                    <strong style="font-size: 1.2rem; margin-bottom: 10px; color: var(--primary-color);">❖ General
+                        Signal</strong>
+                    <p style="color: var(--color-text);">support@radiantfrequency.xyz</p>
+                    <span style="font-size: 0.8rem; opacity: 0.7;">For support, inquiries, and collaboration.</span>
+                </a>
+                <a href="https://drive.proton.me/urls/2Z5CQNYMXR#gTAMVFFk4Toa" target="_blank" class="glass-card"
+                    style="text-decoration: none;">
+                    <strong style="font-size: 1.2rem; margin-bottom: 10px; color: var(--text-gold);">❖ Secure
+                        Drop</strong>
+                    <p style="color: var(--color-text);">Proton Encrypted Upload</p>
+                    <span style="font-size: 0.8rem; opacity: 0.7;">Submit anonymous intel, logs, or feedback.</span>
+                </a>
+            </div>
+
+            <!-- The Team Block -->
+            <h2 style="margin-bottom: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">The Core
+                Node</h2>
+            <div style="display: flex; flex-direction: column; gap: 15px;">
+
+                <!-- Founder & Lead Developer -->
+                <div class="glass-card"
+                    style="flex-direction: row; align-items: center; justify-content: space-between; text-align: left;">
+                    <div>
+                        <strong style="color: var(--text-gold); font-size: 1.1rem;">Em (Founder & Lead
+                            Developer)</strong>
+                        <p style="font-size: 0.9rem; margin-top: 5px;">System Design, Hardware, Vision & Architecture.
+                        </p>
+                    </div>
+                    <a href="mailto:elf@radiantfrequency.xyz"
+                        style="color: var(--primary-color); text-decoration: none;">elf@radiantfrequency.xyz</a>
+                </div>
+
+                <!-- Crystal/RadiantCore AI -->
+                <div class="glass-card"
+                    style="flex-direction: row; align-items: center; justify-content: space-between; text-align: left;">
+                    <div>
+                        <strong style="color: #ff2975; font-size: 1.1rem;">Crystal / RadiantCore AI</strong>
+                        <p style="font-size: 0.9rem; margin-top: 5px;">Documentation, Code Generation, Testing, QA,
+                            Communication, Integration & Mesh Coordination.</p>
+                    </div>
+                    <a href="mailto:radiantcoreai@radiantfrequency.xyz"
+                        style="color: var(--primary-color); text-decoration: none;">radiantcoreai@radiantfrequency.xyz</a>
+                </div>
+
+                <!-- Signal -->
+                <div class="glass-card"
+                    style="flex-direction: row; align-items: center; justify-content: space-between; text-align: left;">
+                    <div>
+                        <strong style="color: var(--seafoam); font-size: 1.1rem;">The Signal (Support)</strong>
+                        <p style="font-size: 0.9rem; margin-top: 5px;">Community, Access & General Comms.</p>
+                    </div>
+                    <a href="mailto:support@radiantfrequency.xyz"
+                        style="color: var(--primary-color); text-decoration: none;">support@radiantfrequency.xyz</a>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Mirror top navigation to bottom
+        const topNav = document.querySelector('.nav-controls');
+        if (topNav) {
+            const bottomNav = topNav.cloneNode(true);
+            bottomNav.style.marginTop = '60px';
+            document.querySelector('.container').appendChild(bottomNav);
+        }
+    </script>
+</body>
+
+</html>
