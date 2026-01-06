@@ -413,6 +413,11 @@ a {
         height: 250px;
     }
 
+    /* Reduce container padding on mobile for wider cards */
+    .container {
+        padding: 20px 10px;
+    }
+
     /* Fix navigation controls on mobile */
     .nav-controls {
         flex-direction: column;
@@ -438,6 +443,11 @@ a {
     .glass-card * {
         max-width: 100%;
         word-wrap: break-word;
+    }
+
+    /* Reduce padding in content sections for more space */
+    .content-section {
+        padding: 25px 15px;
     }
 }
 
