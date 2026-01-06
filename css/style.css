@@ -291,6 +291,13 @@ p.subtitle {
     color: var(--primary-color) !important;
 }
 
+/* Ensure links (especially emails) wrap properly */
+a {
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+
 /* --- NAV CONTROLS --- */
 .nav-controls {
     display: flex;
