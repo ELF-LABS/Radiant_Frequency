@@ -293,8 +293,10 @@ p.subtitle {
 
 /* Ensure links (especially emails) wrap properly */
 a {
-    word-break: break-all;
-    overflow-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    max-width: 100%;
+    display: inline-block;
 }
 
 
@@ -424,6 +426,18 @@ a {
         width: 100%;
         padding: 12px 20px;
         font-size: 0.9rem;
+    }
+
+    /* Ensure glass cards and content wrap properly on mobile */
+    .glass-card {
+        max-width: 100%;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .glass-card * {
+        max-width: 100%;
+        word-wrap: break-word;
     }
 }
 
