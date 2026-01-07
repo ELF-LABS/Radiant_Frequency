@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Project Intake | Radiant Frequency</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* Multi-step form specific styles */
+        .step-container {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .step-container.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Progress indicator */
+        .progress-container {
+            background: rgba(41, 255, 198, 0.1);
+            border: 1px solid rgba(41, 255, 198, 0.3);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .progress-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .progress-step-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(41, 255, 198, 0.2);
+            border: 2px solid rgba(41, 255, 198, 0.4);
+            margin: 0 auto 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.6);
+            transition: all 0.3s ease;
+        }
+
+        .progress-step.active .progress-step-circle {
+            background: linear-gradient(135deg, #29ffc6, #20d9a8);
+            border-color: #29ffc6;
+            color: #000;
+            box-shadow: 0 0 20px rgba(41, 255, 198, 0.5);
+        }
+
+        .progress-step.completed .progress-step-circle {
+            background: rgba(41, 255, 198, 0.4);
+            border-color: #29ffc6;
+            color: #fff;
+        }
+
+        .progress-step-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+        }
+
+        .progress-step.active .progress-step-label {
+            color: #ffd700;
+            font-weight: 600;
+        }
+
+        /* Progress bar line */
+        .progress-bar-bg {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: rgba(41, 255, 198, 0.2);
+            z-index: 1;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #29ffc6, #20d9a8);
+            transition: width 0.5s ease;
+            box-shadow: 0 0 10px rgba(41, 255, 198, 0.5);
+        }
+
+        /* Navigation buttons */
+        .form-navigation {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            justify-content: space-between;
+        }
+
+        .nav-btn {
+            flex: 1;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn.prev-btn {
+            background: rgba(41, 255, 198, 0.2);
+            color: #29ffc6;
+            border: 1px solid rgba(41, 255, 198, 0.4);
+        }
+
+        .nav-btn.prev-btn:hover {
+            background: rgba(41, 255, 198, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(41, 255, 198, 0.3);
+        }
+
+        .nav-btn.next-btn {
+            background: linear-gradient(135deg, #29ffc6, #20d9a8);
+            color: #000;
+            font-weight: 700;
+        }
+
+        .nav-btn.next-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(41, 255, 198, 0.4);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Page header styling */
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-header h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            color: #ffd700;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            color: rgba(224, 212, 252, 0.9);
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Form Section Tiles - RESTORED EMERALD GREEN GLASSMORPHISM */
+        .form-section {
+            background: rgba(41, 255, 198, 0.15);
+            border: 1px solid rgba(41, 255, 198, 0.3);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            animation: float 6s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+
+        .form-section:nth-child(even) {
+            animation-delay: 1s;
+        }
+
+        .form-section:nth-child(3n) {
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .form-section:hover,
+        .form-section:active {
+            transform: translateY(-12px) !important;
+            box-shadow: 0 15px 40px rgba(41, 255, 198, 0.3);
+            border-color: rgba(41, 255, 198, 0.5);
+            animation-play-state: paused;
+        }
+
+        .form-section h3 {
+            color: #ffd700;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-family: 'Cinzel', serif;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+
+        /* Form Groups */
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #ffd700;
+            font-weight: 500;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        /* Input Fields - RESTORED STYLING */
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group input[type="date"],
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(41, 255, 198, 0.3);
+            border-radius: 8px;
+            color: #fff;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="email"]:focus,
+        .form-group input[type="tel"]:focus,
+        .form-group input[type="date"]:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #ffd700;
+            background: rgba(0, 0, 0, 0.4);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Select Dropdowns - PROPERLY STYLED */
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2329ffc6' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            padding-right: 40px;
+        }
+
+        .form-group select option {
+            background: #1a0b2e;
+            color: #fff;
+            padding: 10px;
+        }
+
+        /* Radio Button Groups - RESTORED STYLING */
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(41, 255, 198, 0.2);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .radio-item:hover {
+            background: rgba(41, 255, 198, 0.1);
+            border-color: rgba(41, 255, 198, 0.4);
+            transform: translateX(5px);
+        }
+
+        .radio-item input[type="radio"] {
+            margin-right: 12px;
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+            accent-color: #29ffc6;
+        }
+
+        .radio-item label {
+            color: rgba(224, 212, 252, 0.9);
+            cursor: pointer;
+            margin: 0;
+            flex: 1;
+        }
+
+        .radio-item:has(input:checked) {
+            background: rgba(41, 255, 198, 0.2);
+            border-color: #ffd700;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+        }
+
+        /* Checkbox Groups - Same styling as radio buttons */
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(41, 255, 198, 0.2);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .checkbox-item:hover {
+            background: rgba(41, 255, 198, 0.1);
+            border-color: rgba(41, 255, 198, 0.4);
+            transform: translateX(5px);
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 12px;
+            cursor: pointer;
+            width: 18px;
+            height: 18px;
+            accent-color: #29ffc6;
+        }
+
+        .checkbox-item label {
+            color: rgba(224, 212, 252, 0.9);
+            cursor: pointer;
+            margin: 0;
+            flex: 1;
+            font-size: 0.95rem;
+        }
+
+        .checkbox-item:has(input:checked) {
+            background: rgba(41, 255, 198, 0.2);
+            border-color: #ffd700;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+        }
+
+        /* Design suggestions */
+        .design-suggestions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .suggestion-card {
+            background: rgba(41, 255, 198, 0.1);
+            border: 1px solid rgba(41, 255, 198, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .suggestion-card:hover {
+            background: rgba(41, 255, 198, 0.2);
+            border-color: #29ffc6;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(41, 255, 198, 0.3);
+        }
+
+        .suggestion-card.selected {
+            background: rgba(41, 255, 198, 0.3);
+            border-color: #ffd700;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .suggestion-card h4 {
+            color: #ffd700;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .suggestion-card p {
+            color: rgba(224, 212, 252, 0.8);
+            font-size: 0.9rem;
+        }
+
+        /* Infinite Scrolling Marquee Banner */
+        .marquee-container {
+            overflow: hidden;
+            background: rgba(41, 255, 198, 0.1);
+            border-top: 1px solid rgba(41, 255, 198, 0.3);
+            border-bottom: 1px solid rgba(41, 255, 198, 0.3);
+            padding: 20px 0;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .marquee-content {
+            display: flex;
+            animation: scroll 30s linear infinite;
+            white-space: nowrap;
+        }
+
+        .marquee-item {
+            display: inline-flex;
+            align-items: center;
+            padding: 0 40px;
+            font-size: 1.1rem;
+            color: #ffd700;
+            font-weight: 500;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .marquee-item::before {
+            content: "✨";
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Validation Message Box */
+        .validation-message {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-100px);
+            max-width: 600px;
+            width: 90%;
+            background: rgba(255, 107, 107, 0.95);
+            border: 2px solid rgba(255, 107, 107, 0.8);
+            border-radius: 12px;
+            padding: 20px 25px;
+            box-shadow: 0 10px 40px rgba(255, 107, 107, 0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 10000;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .validation-message.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        .validation-message-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .validation-message-title {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .validation-message-close {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .validation-message-close:hover {
+            opacity: 1;
+            transform: rotate(90deg);
+        }
+
+        .validation-message-content {
+            color: #fff;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .validation-message-content ul {
+            margin: 10px 0 0 0;
+            padding-left: 20px;
+        }
+
+        .validation-message-content li {
+            margin: 5px 0;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+            background: linear-gradient(135deg, #9f7aea, #7c3aed);
+        }
+
+        .required {
+            color: #ff6b6b;
+            font-weight: 600;
+        }
+
+        /* Placeholder text styling */
+        ::placeholder {
+            color: rgba(224, 212, 252, 0.4);
+            font-style: italic;
+        }
+
+        /* Mobile Responsive Styles for Progress Bar */
+        @media (max-width: 768px) {
+            .progress-container {
+                padding: 15px 10px;
+            }
+
+            .progress-step-circle {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
+            }
+
+            .progress-step-label {
+                font-size: 0.75rem;
+            }
+
+            .progress-bar-bg {
+                top: 17px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .progress-container {
+                padding: 12px 8px;
+            }
+
+            .progress-step-circle {
+                width: 30px;
+                height: 30px;
+                font-size: 0.85rem;
+            }
+
+            .progress-step-label {
+                font-size: 0.65rem;
+                max-width: 60px;
+                margin: 0 auto;
+            }
+
+            .progress-bar-bg {
+                top: 15px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .progress-step-label {
+                display: none;
+            }
+
+            .progress-step-circle {
+                width: 28px;
+                height: 28px;
+                font-size: 0.8rem;
+            }
+
+            .progress-bar-bg {
+                top: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body class="theme-vision">
+    <!-- Validation Message Box -->
+    <div class="validation-message" id="validationMessage">
+        <div class="validation-message-header">
+            <div class="validation-message-title">
+                <span>⚠️</span>
+                <span>Please Complete Required Fields</span>
+            </div>
+            <button class="validation-message-close" onclick="hideValidationMessage()">×</button>
+        </div>
+        <div class="validation-message-content" id="validationContent">
+            <!-- Dynamic content will be inserted here -->
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Infinite Scrolling Services Marquee - MOVED TO TOP -->
+        <div class="marquee-container" style="margin-top: 0; margin-bottom: 30px;">
+            <div class="marquee-content">
+                <!-- First set of items -->
+                <span class="marquee-item">Custom Web Design</span>
+                <span class="marquee-item">Mobile-First Development</span>
+                <span class="marquee-item">Brand Identity</span>
+                <span class="marquee-item">SEO Optimization</span>
+                <span class="marquee-item">E-commerce Solutions</span>
+                <span class="marquee-item">Analytics Integration</span>
+                <span class="marquee-item">Content Creation</span>
+                <span class="marquee-item">Responsive Design</span>
+                <!-- Duplicate set for seamless loop -->
+                <span class="marquee-item">Custom Web Design</span>
+                <span class="marquee-item">Mobile-First Development</span>
+                <span class="marquee-item">Brand Identity</span>
+                <span class="marquee-item">SEO Optimization</span>
+                <span class="marquee-item">E-commerce Solutions</span>
+                <span class="marquee-item">Analytics Integration</span>
+                <span class="marquee-item">Content Creation</span>
+                <span class="marquee-item">Responsive Design</span>
+            </div>
+        </div>
+
+        <header style="text-align: center; margin-bottom: 50px; max-width: 100%;">
+            <!-- Title text at top - no green tile -->
+            <h1 style="font-family: 'Cinzel', serif;
+                       font-size: 3rem;
+                       color: #ffd700;
+                       text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+                       margin: 0 0 7.5px 0;
+                       letter-spacing: 2px;">
+                ELF DESIGNS
+            </h1>
+
+            <!-- Logo at half size (180px) with sepia overlay -->
+            <div style="margin-bottom: 7.5px; position: relative; display: inline-block;">
+                <img src="../assets/images/radiant_frequency_logo.png" alt="Radiant Frequency"
+                    style="width: 180px; height: auto; display: block;">
+                <div style="position: absolute; 
+                            top: 0; 
+                            left: 0; 
+                            width: 100%; 
+                            height: 100%; 
+                            background: rgba(255, 200, 100, 0.31); 
+                            pointer-events: none; 
+                            mix-blend-mode: multiply;"></div>
+            </div>
+        </header>
+
+        <!-- OLD MARQUEE LOCATION - NOW REMOVED -->
+        <div class="intake-form">
+
+            <form action="https://formspree.io/f/mykzrzvp" method="POST" id="intake-form">
+
+                <!-- STEP 1: Welcome & Contact -->
+                <div class="step-container active" data-step="1">
+                    <div class="page-header">
+                        <h2>Welcome to ELF Designs! ✨</h2>
+                        <p>We are excited to work with you and make your vision real. Let's start by getting to know you
+                            and your project.</p>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>📧 Contact Information</h3>
+
+                        <div class="form-group">
+                            <label for="name">Your Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number (Optional)</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-name">Project/Business Name</label>
+                            <input type="text" id="project-name" name="project-name"
+                                placeholder="What should we call this project?">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>📝 Content & Features</h3>
+
+                        <div class="form-group">
+                            <label>What pages/sections do you need? <span class="required">*</span></label>
+                            <p style="color: rgba(224, 212, 252, 0.7); font-size: 0.9rem; margin-bottom: 15px;">Select
+                                all that apply</p>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="content-home" name="content-pages" value="Home Page">
+                                    <label for="content-home">Home Page</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="content-about" name="content-pages" value="About/Bio">
+                                    <label for="content-about">About/Bio</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="content-services" name="content-pages"
+                                        value="Services/Products">
+                                    <label for="content-services">Services/Products</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="content-portfolio" name="content-pages"
+                                        value="Portfolio/Gallery">
+                                    <label for="content-portfolio">Portfolio/Gallery</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="content-blog" name="content-pages" value="Blog/News">
+                                    <label for="content-blog">Blog/News</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="content-contact" name="content-pages"
+                                        value="Contact Page">
+                                    <label for="content-contact">Contact Page</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="content-testimonials" name="content-pages"
+                                        value="Testimonials">
+                                    <label for="content-testimonials">Testimonials</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="content-faq" name="content-pages" value="FAQ">
+                                    <label for="content-faq">FAQ</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="content-team" name="content-pages" value="Team/Staff">
+                                    <label for="content-team">Team/Staff</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="content-pricing" name="content-pages" value="Pricing">
+                                    <label for="content-pricing">Pricing</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>What features do you need?</label>
+                            <p style="color: rgba(224, 212, 252, 0.7); font-size: 0.9rem; margin-bottom: 15px;">Select
+                                all that apply</p>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="feature-contact-form" name="features"
+                                        value="Contact Form">
+                                    <label for="feature-contact-form">Contact Form</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="feature-gallery" name="features"
+                                        value="Photo/Video Gallery">
+                                    <label for="feature-gallery">Photo/Video Gallery</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="feature-ecommerce" name="features"
+                                        value="E-commerce/Shop">
+                                    <label for="feature-ecommerce">E-commerce/Shop</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="feature-booking" name="features"
+                                        value="Booking/Scheduling">
+                                    <label for="feature-booking">Booking/Scheduling</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="feature-newsletter" name="features"
+                                        value="Newsletter Signup">
+                                    <label for="feature-newsletter">Newsletter Signup</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="feature-social" name="features"
+                                        value="Social Media Integration">
+                                    <label for="feature-social">Social Media Integration</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="feature-search" name="features"
+                                        value="Search Functionality">
+                                    <label for="feature-search">Search Functionality</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="feature-maps" name="features" value="Google Maps">
+                                    <label for="feature-maps">Google Maps</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="feature-chat" name="features" value="Live Chat">
+                                    <label for="feature-chat">Live Chat</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="feature-membership" name="features"
+                                        value="Member Login Area">
+                                    <label for="feature-membership">Member Login Area</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="content-ready">Is your content ready? <span class="required">*</span></label>
+                            <select id="content-ready" name="content-ready" required>
+                                <option value="">-- Select an option --</option>
+                                <option value="all-ready">Yes, all content is ready</option>
+                                <option value="mostly-ready">Mostly ready, need some help</option>
+                                <option value="need-help">No, I need help creating content</option>
+                                <option value="not-sure">Not sure what I need</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="additional-features">Additional features or notes</label>
+                            <textarea id="additional-features" name="additional-features" rows="4"
+                                placeholder="Any other features, integrations, or special requirements?"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 2: Vision & Design -->
+                <div class="step-container" data-step="2">
+                    <div class="page-header">
+                        <h2>Your Vision & Design Aesthetic 🎨</h2>
+                        <p>Tell us about your dream website. What should it look and feel like?</p>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>💭 What's your vision?</h3>
+
+                        <div class="form-group">
+                            <label for="purpose">Main purpose of your website <span class="required">*</span></label>
+                            <select id="purpose" name="purpose" required>
+                                <option value="">-- Select an option --</option>
+                                <option value="portfolio">Portfolio/Showcase work</option>
+                                <option value="business">Business/Services</option>
+                                <option value="ecommerce">E-commerce/Online store</option>
+                                <option value="blog">Blog/Content site</option>
+                                <option value="nonprofit">Nonprofit/Community</option>
+                                <option value="personal">Personal brand</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="vision">Describe your vision</label>
+                            <textarea id="vision" name="vision" rows="5"
+                                placeholder="What do you want your website to achieve? Who is your target audience? What feeling should it evoke?"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>🎨 Design Aesthetic</h3>
+                        <p style="color: rgba(224, 212, 252, 0.8); margin-bottom: 20px;">Not sure what style you want?
+                            Here are some popular aesthetics to inspire you. Click any that resonate!</p>
+
+                        <div class="design-suggestions">
+                            <div class="suggestion-card" onclick="toggleSuggestion(this, 'Modern Minimalist')">
+                                <h4>Modern Minimalist</h4>
+                                <p>Clean, simple, lots of white space</p>
+                                <a href="templates/modern-minimalist.html" target="_blank"
+                                    onclick="event.stopPropagation();"
+                                    style="color: #ffd700; text-decoration: underline; font-size: 0.9rem; margin-top: 10px; display: inline-block;">
+                                    👁️ Preview Template
+                                </a>
+                            </div>
+                            <div class="suggestion-card" onclick="toggleSuggestion(this, 'Bold & Vibrant')">
+                                <h4>Bold & Vibrant</h4>
+                                <p>Bright colors, energetic feel</p>
+                                <a href="templates/bold-vibrant.html" target="_blank" onclick="event.stopPropagation();"
+                                    style="color: #ffd700; text-decoration: underline; font-size: 0.9rem; margin-top: 10px; display: inline-block;">
+                                    👁️ Preview Template
+                                </a>
+                            </div>
+                            <div class="suggestion-card" onclick="toggleSuggestion(this, 'Dark & Elegant')">
+                                <h4>Dark & Elegant</h4>
+                                <p>Sophisticated, premium look</p>
+                                <a href="templates/dark-elegant.html" target="_blank" onclick="event.stopPropagation();"
+                                    style="color: #ffd700; text-decoration: underline; font-size: 0.9rem; margin-top: 10px; display: inline-block;">
+                                    👁️ Preview Template
+                                </a>
+                            </div>
+                            <div class="suggestion-card" onclick="toggleSuggestion(this, 'Nature-Inspired')">
+                                <h4>Nature-Inspired</h4>
+                                <p>Organic, earthy, sustainable</p>
+                                <a href="templates/nature-inspired.html" target="_blank"
+                                    onclick="event.stopPropagation();"
+                                    style="color: #ffd700; text-decoration: underline; font-size: 0.9rem; margin-top: 10px; display: inline-block;">
+                                    👁️ Preview Template
+                                </a>
+                            </div>
+                            <div class="suggestion-card" onclick="toggleSuggestion(this, 'Futuristic Tech')">
+                                <h4>Futuristic Tech</h4>
+                                <p>Cutting-edge, innovative</p>
+                                <a href="templates/futuristic-tech.html" target="_blank"
+                                    onclick="event.stopPropagation();"
+                                    style="color: #ffd700; text-decoration: underline; font-size: 0.9rem; margin-top: 10px; display: inline-block;">
+                                    👁️ Preview Template
+                                </a>
+                            </div>
+                            <div class="suggestion-card" onclick="toggleSuggestion(this, 'Vintage/Retro')">
+                                <h4>Vintage/Retro</h4>
+                                <p>Classic, nostalgic charm</p>
+                                <a href="templates/vintage-retro.html" target="_blank"
+                                    onclick="event.stopPropagation();"
+                                    style="color: #ffd700; text-decoration: underline; font-size: 0.9rem; margin-top: 10px; display: inline-block;">
+                                    👁️ Preview Template
+                                </a>
+                            </div>
+                        </div>
+
+                        <input type="hidden" id="design-aesthetic" name="design-aesthetic">
+
+                        <div class="form-group" style="margin-top: 25px;">
+                            <label for="design-notes">Design preferences or inspiration</label>
+                            <textarea id="design-notes" name="design-notes" rows="4"
+                                placeholder="Any specific colors, fonts, or websites you love? Share links or describe your ideal look."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="examples">Websites you admire (Optional)</label>
+                            <input type="text" id="examples" name="examples" placeholder="Share URLs of sites you like">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 3: Technical Requirements -->
+                <div class="step-container" data-step="3">
+                    <div class="page-header">
+                        <h2>Technical Requirements ⚙️</h2>
+                        <p>Let's cover the technical details to ensure your site runs smoothly.</p>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>🌐 Domain & Hosting</h3>
+
+                        <div class="form-group">
+                            <label>Do you have a domain name? <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <div class="radio-item">
+                                    <input type="radio" id="domain-yes" name="domain" value="yes" required>
+                                    <label for="domain-yes">Yes, I have one</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="domain-need" name="domain" value="need">
+                                    <label for="domain-need">No, I need help getting one</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="domain-undecided" name="domain" value="undecided">
+                                    <label for="domain-undecided">Not sure yet</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="domain-name">Domain name (if you have one)</label>
+                            <input type="text" id="domain-name" name="domain-name" placeholder="e.g., yoursite.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Do you have web hosting? <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <div class="radio-item">
+                                    <input type="radio" id="hosting-yes" name="hosting" value="yes" required>
+                                    <label for="hosting-yes">Yes, I have hosting</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="hosting-need" name="hosting" value="need">
+                                    <label for="hosting-need">No, I need hosting setup</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="hosting-undecided" name="hosting" value="undecided">
+                                    <label for="hosting-undecided">Not sure</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>🔧 Maintenance & Updates</h3>
+
+                        <div class="form-group">
+                            <label>Will you need ongoing maintenance? <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <div class="radio-item">
+                                    <input type="radio" id="maintenance-yes" name="maintenance" value="yes" required>
+                                    <label for="maintenance-yes">Yes, please handle updates</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="maintenance-no" name="maintenance" value="no">
+                                    <label for="maintenance-no">No, I'll manage it myself</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="maintenance-undecided" name="maintenance" value="undecided">
+                                    <label for="maintenance-undecided">Let's discuss options</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Do you need help creating content? <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <div class="radio-item">
+                                    <input type="radio" id="content-help-yes" name="content-help" value="yes" required>
+                                    <label for="content-help-yes">Yes, copywriting & images</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="content-help-no" name="content-help" value="no">
+                                    <label for="content-help-no">No, I have everything</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="content-help-some" name="content-help" value="some">
+                                    <label for="content-help-some">Just some help</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 4: Services -->
+                <div class="step-container" data-step="4">
+                    <div class="page-header">
+                        <h2>Additional Services 🚀</h2>
+                        <p>What extra features will make your website shine?</p>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>📱 Mobile & Analytics</h3>
+
+                        <div class="form-group">
+                            <label>Mobile responsiveness <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <div class="radio-item">
+                                    <input type="radio" id="mobile-yes" name="mobile" value="yes" required>
+                                    <label for="mobile-yes">Yes, must work on mobile</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="mobile-no" name="mobile" value="no">
+                                    <label for="mobile-no">Desktop only is fine</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="mobile-priority" name="mobile" value="priority">
+                                    <label for="mobile-priority">Mobile-first priority</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Analytics & tracking <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <div class="radio-item">
+                                    <input type="radio" id="analytics-yes" name="analytics" value="yes" required>
+                                    <label for="analytics-yes">Yes, I want analytics</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="analytics-no" name="analytics" value="no">
+                                    <label for="analytics-no">No analytics needed</label>
+                                </div>
+                                <div class="radio-item">
+                                    <input type="radio" id="analytics-undecided" name="analytics" value="undecided">
+                                    <label for="analytics-undecided">Not sure</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>🛍️ E-commerce & Special Features</h3>
+
+                        <div class="form-group">
+                            <label for="ecommerce">E-commerce needs</label>
+                            <textarea id="ecommerce" name="ecommerce" rows="3"
+                                placeholder="Do you need to sell products? How many? Payment processing needs?"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="special-features">Special features or integrations</label>
+                            <textarea id="special-features" name="special-features" rows="4"
+                                placeholder="e.g., Booking system, membership area, API integrations, custom functionality"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 5: Timeline & Budget -->
+                <div class="step-container" data-step="5">
+                    <div class="page-header">
+                        <h2>Timeline & Budget 📅</h2>
+                        <p>Let's finalize the details and get your project started!</p>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>⏰ Project Timeline</h3>
+
+                        <div class="form-group">
+                            <label for="timeline">When do you need this completed? <span
+                                    class="required">*</span></label>
+                            <select id="timeline" name="timeline" required>
+                                <option value="">-- Select a timeframe --</option>
+                                <option value="asap">ASAP (1-2 weeks)</option>
+                                <option value="month">Within a month</option>
+                                <option value="flexible">Flexible timeline</option>
+                                <option value="specific">I have a specific date</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="deadline">Specific deadline (if applicable)</label>
+                            <input type="date" id="deadline" name="deadline">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>💰 Budget</h3>
+
+                        <div class="form-group">
+                            <label for="budget">What's your budget range? <span class="required">*</span></label>
+                            <select id="budget" name="budget" required>
+                                <option value="">-- Select a budget range --</option>
+                                <option value="250">$250 - Content Ready Projects</option>
+                                <option value="500-1000">$500 - $1,000</option>
+                                <option value="1000-2500">$1,000 - $2,500</option>
+                                <option value="2500-5000">$2,500 - $5,000</option>
+                                <option value="5000+">$5,000+</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>📝 Anything Else?</h3>
+
+                        <div class="form-group">
+                            <label for="additional">Is there anything else I should know?</label>
+                            <textarea id="additional" name="additional" rows="4"
+                                placeholder="Any other details, questions, or thoughts you want to share?"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="how-heard">How did you hear about Radiant Frequency?</label>
+                            <input type="text" id="how-heard" name="how-heard"
+                                placeholder="e.g., Friend referral, social media, etc.">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">✨ Submit Project Request ✨</button>
+
+                    <!-- Contact Us Button -->
+                    <div style="text-align: center; margin: 40px 0;">
+                        <a href="contact.html" class="back-button" style="display: inline-block; margin: 0;">💬 Contact
+                            Us Directly</a>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 30px; opacity: 0.8;">
+                        <p>After you submit, I'll review your vision and get back to you within 24-48 hours with:</p>
+                        <ul style="list-style: none; padding: 0; margin-top: 15px;">
+                            <li>✅ Initial design concepts</li>
+                            <li>✅ Project timeline</li>
+                            <li>✅ Detailed proposal</li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Progress Indicator with Integrated Navigation - UNIFIED BLOCK -->
+        <div class="progress-container" style="margin-top: 50px; margin-bottom: 30px;">
+            <div class="progress-steps">
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="progressBar" style="width: 0%"></div>
+                </div>
+                <div class="progress-step active" data-step="1">
+                    <div class="progress-step-circle">1</div>
+                    <div class="progress-step-label">Welcome</div>
+                </div>
+                <div class="progress-step" data-step="2">
+                    <div class="progress-step-circle">2</div>
+                    <div class="progress-step-label">Vision</div>
+                </div>
+                <div class="progress-step" data-step="3">
+                    <div class="progress-step-circle">3</div>
+                    <div class="progress-step-label">Technical</div>
+                </div>
+                <div class="progress-step" data-step="4">
+                    <div class="progress-step-circle">4</div>
+                    <div class="progress-step-label">Services</div>
+                </div>
+                <div class="progress-step" data-step="5">
+                    <div class="progress-step-circle">5</div>
+                    <div class="progress-step-label">Finalize</div>
+                </div>
+            </div>
+
+            <!-- Integrated Navigation Buttons -->
+            <div class="form-navigation" style="margin-top: 30px;">
+                <button type="button" class="nav-btn prev-btn" id="prevBtn" style="display: none;">
+                    ← Previous
+                </button>
+                <button type="button" class="nav-btn next-btn" id="nextBtn">
+                    Next →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ========================================
+        // FRESH NAVIGATION SYSTEM - REBUILT
+        // ========================================
+
+        let currentStep = 1;
+        const totalSteps = 5;
+
+        // Show a specific step
+        function showStep(stepNumber) {
+            // Hide all step containers
+            const allSteps = document.querySelectorAll('.step-container');
+            allSteps.forEach(step => {
+                step.classList.remove('active');
+            });
+
+            // Show the requested step
+            const targetStep = document.querySelector(`.step-container[data-step="${stepNumber}"]`);
+            if (targetStep) {
+                targetStep.classList.add('active');
+            }
+
+            // Update the progress bar
+            updateProgressBar(stepNumber);
+
+            // Update button visibility
+            updateNavigationButtons(stepNumber);
+
+            // NO SCROLL - Let the user see the step change naturally
+        }
+
+        // Update the progress bar and step indicators
+        function updateProgressBar(stepNumber) {
+            // Update the progress fill
+            const progressFill = document.getElementById('progressBar');
+            const progressPercent = ((stepNumber - 1) / (totalSteps - 1)) * 100;
+            progressFill.style.width = progressPercent + '%';
+
+            // Update step circle states
+            const progressSteps = document.querySelectorAll('.progress-step');
+            progressSteps.forEach((step, index) => {
+                const stepNum = index + 1;
+                step.classList.remove('active', 'completed');
+
+                if (stepNum < stepNumber) {
+                    step.classList.add('completed');
+                } else if (stepNum === stepNumber) {
+                    step.classList.add('active');
+                }
+            });
+        }
+
+        // Update Previous/Next button visibility
+        function updateNavigationButtons(stepNumber) {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            // Previous button: hide on step 1, show otherwise
+            if (stepNumber === 1) {
+                prevBtn.style.display = 'none';
+                nextBtn.style.width = '100%';
+            } else {
+                prevBtn.style.display = 'block';
+                nextBtn.style.width = '';
+            }
+
+            // Next button: hide on last step, show otherwise
+            if (stepNumber === totalSteps) {
+                nextBtn.style.display = 'none';
+                if (stepNumber > 1) {
+                    prevBtn.style.width = '100%';
+                }
+            } else {
+                nextBtn.style.display = 'block';
+                prevBtn.style.width = '';
+            }
+        }
+
+        // Validate the current step before moving forward
+        function validateStep(stepNumber) {
+            const stepContainer = document.querySelector(`.step-container[data-step="${stepNumber}"]`);
+            const requiredFields = stepContainer.querySelectorAll('[required]');
+            const validationErrors = [];
+
+            const checkedRadioGroups = new Set();
+
+            // Special validation for checkboxes with required labels
+            const checkboxGroups = stepContainer.querySelectorAll('.form-group');
+            for (let group of checkboxGroups) {
+                const label = group.querySelector('label');
+                if (label && label.innerHTML.includes('required')) {
+                    const checkboxes = group.querySelectorAll('input[type="checkbox"]');
+                    if (checkboxes.length > 0) {
+                        const anyChecked = Array.from(checkboxes).some(cb => cb.checked);
+                        if (!anyChecked) {
+                            const fieldName = label.textContent.replace('*', '').trim();
+                            validationErrors.push(`Select at least one: ${fieldName}`);
+                        }
+                    }
+                }
+            }
+
+            for (let field of requiredFields) {
+                // Radio buttons
+                if (field.type === 'radio') {
+                    if (checkedRadioGroups.has(field.name)) {
+                        continue;
+                    }
+                    checkedRadioGroups.add(field.name);
+
+                    const radioGroup = stepContainer.querySelectorAll(`input[name="${field.name}"]`);
+                    const isChecked = Array.from(radioGroup).some(radio => radio.checked);
+
+                    if (!isChecked) {
+                        const label = stepContainer.querySelector(`label[for="${field.id}"]`);
+                        const fieldName = label ? label.textContent.replace('*', '').trim() : field.name;
+                        validationErrors.push(`Select an option: ${fieldName}`);
+                    }
+                }
+                // Select dropdowns
+                else if (field.tagName === 'SELECT') {
+                    if (!field.value || field.value === '') {
+                        const label = stepContainer.querySelector(`label[for="${field.id}"]`);
+                        const fieldName = label ? label.textContent.replace('*', '').trim() : field.name;
+                        validationErrors.push(`Choose from dropdown: ${fieldName}`);
+                    }
+                }
+                // Text inputs, email, etc.
+                else {
+                    if (!field.value.trim()) {
+                        const label = stepContainer.querySelector(`label[for="${field.id}"]`);
+                        const fieldName = label ? label.textContent.replace('*', '').trim() : field.name;
+                        validationErrors.push(`Fill in: ${fieldName}`);
+                    }
+                }
+            }
+
+            // If there are errors, show them in the notification box
+            if (validationErrors.length > 0) {
+                showValidationMessage(validationErrors);
+                return false;
+            }
+
+            return true;
+        }
+
+        // Go to the next step
+        function goToNextStep() {
+            if (currentStep >= totalSteps) {
+                return; // Already at the last step
+            }
+
+            // Validate before moving forward
+            if (!validateStep(currentStep)) {
+                return;
+            }
+
+            currentStep++;
+            showStep(currentStep);
+        }
+
+        // Go to the previous step
+        function goToPreviousStep() {
+            if (currentStep <= 1) {
+                return; // Already at the first step
+            }
+
+            currentStep--;
+            showStep(currentStep);
+        }
+
+        // Show validation message with errors
+        function showValidationMessage(errors) {
+            const messageBox = document.getElementById('validationMessage');
+            const contentBox = document.getElementById('validationContent');
+
+            // Build the error list
+            let content = '<p>Please complete the following to continue:</p><ul>';
+            errors.forEach(error => {
+                content += `<li>${error}</li>`;
+            });
+            content += '</ul>';
+
+            contentBox.innerHTML = content;
+            messageBox.classList.add('show');
+
+            // Scroll to top smoothly to show the message
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Auto-hide after 8 seconds
+            setTimeout(() => {
+                hideValidationMessage();
+            }, 8000);
+        }
+
+        // Hide validation message
+        function hideValidationMessage() {
+            const messageBox = document.getElementById('validationMessage');
+            messageBox.classList.remove('show');
+        }
+
+        // Design suggestion toggle
+        let selectedSuggestions = [];
+
+        function toggleSuggestion(element, value) {
+            element.classList.toggle('selected');
+
+            const index = selectedSuggestions.indexOf(value);
+            if (index > -1) {
+                selectedSuggestions.splice(index, 1);
+            } else {
+                selectedSuggestions.push(value);
+            }
+
+            document.getElementById('design-aesthetic').value = selectedSuggestions.join(', ');
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            // Connect navigation buttons to functions
+            document.getElementById('nextBtn').addEventListener('click', goToNextStep);
+            document.getElementById('prevBtn').addEventListener('click', goToPreviousStep);
+
+            // Initialize to step 1
+            showStep(1);
+
+            // Add click functionality to progress step circles
+            document.querySelectorAll('.progress-step-circle').forEach((circle, index) => {
+                circle.style.cursor = 'pointer';
+                circle.addEventListener('click', function () {
+                    const stepNumber = index + 1;
+                    // Allow jumping to any completed step or the next step
+                    if (stepNumber <= currentStep + 1) {
+                        currentStep = stepNumber;
+                        showStep(currentStep);
+                    }
+                });
+            });
+
+            // Check for template selection from URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const selectedTemplate = urlParams.get('template');
+
+            if (selectedTemplate) {
+                // Map template URL values to display names
+                const templateMap = {
+                    'modern-minimalist': 'Modern Minimalist',
+                    'bold-vibrant': 'Bold & Vibrant',
+                    'dark-elegant': 'Dark & Elegant',
+                    'nature-inspired': 'Nature-Inspired',
+                    'futuristic-tech': 'Futuristic Tech',
+                    'vintage-retro': 'Vintage/Retro'
+                };
+
+                const templateName = templateMap[selectedTemplate];
+
+                if (templateName) {
+                    // Find and select the corresponding card
+                    const cards = document.querySelectorAll('.suggestion-card');
+                    cards.forEach(card => {
+                        const cardTitle = card.querySelector('h4').textContent;
+                        if (cardTitle === templateName) {
+                            card.classList.add('selected');
+                            selectedSuggestions.push(templateName);
+                            document.getElementById('design-aesthetic').value = templateName;
+                        }
+                    });
+
+                    // Navigate to step 2 (Vision & Design)
+                    currentStep = 2;
+                    showStep(currentStep);
+
+                    // Show a friendly message
+                    setTimeout(() => {
+                        alert(`✨ Great choice! The "${templateName}" aesthetic has been selected. Feel free to adjust or add more details below.`);
+                    }, 500);
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
