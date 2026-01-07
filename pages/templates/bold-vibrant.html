@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bold & Vibrant Template | Pulse Creative</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff006e 0%, #8338ec 50%, #3a86ff 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('../../assets/images/template_vibrant.png') center/cover;
+            opacity: 0.3;
+            animation: pulse 10s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .hero h1 {
+            font-size: 6rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, #3a86ff, #ffbe0b, #06ffa5, #3a86ff);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient 3s ease infinite;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 20px 60px;
+            background: linear-gradient(135deg, #ff006e, #8338ec);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(255, 0, 110, 0.5);
+            text-transform: uppercase;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 60px rgba(255, 0, 110, 0.7);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 120px 40px;
+            background: #0a0a0a;
+        }
+
+        .section-title {
+            font-size: 4rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 80px;
+            background: linear-gradient(45deg, #ffbe0b, #ff006e, #3a86ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            padding: 50px 40px;
+            background: linear-gradient(135deg, rgba(255, 0, 110, 0.1), rgba(131, 56, 236, 0.1));
+            border: 3px solid transparent;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff006e, #8338ec, #3a86ff);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            opacity: 0.2;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) rotate(-2deg);
+            border-color: #ff006e;
+            box-shadow: 0 20px 60px rgba(255, 0, 110, 0.4);
+        }
+
+        .service-card h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffbe0b;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card p {
+            color: #fff;
+            font-weight: 400;
+            line-height: 1.8;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 120px 40px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .feature-box {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #ff006e, #8338ec);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 900;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .feature-box:nth-child(2) {
+            background: linear-gradient(135deg, #ffbe0b, #fb5607);
+        }
+
+        .feature-box:nth-child(3) {
+            background: linear-gradient(135deg, #3a86ff, #8338ec);
+        }
+
+        .feature-box:nth-child(4) {
+            background: linear-gradient(135deg, #fb5607, #ff006e);
+        }
+
+        .feature-box:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 30px 80px rgba(255, 0, 110, 0.6);
+        }
+
+        /* Select Template Button */
+        .select-template {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 1000;
+        }
+
+        .select-btn {
+            padding: 20px 40px;
+            background: linear-gradient(135deg, #ff006e, #8338ec);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            box-shadow: 0 10px 40px rgba(255, 0, 110, 0.5);
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        .select-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 50px rgba(255, 0, 110, 0.7);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Pulse Creative</h1>
+            <p>Where Energy Meets Innovation</p>
+            <a href="#services" class="cta-btn">Let's Create!</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">Our Superpowers</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Brand Identity</h3>
+                <p>Bold, unforgettable brands that pop off the screen and into hearts.</p>
+            </div>
+            <div class="service-card">
+                <h3>Digital Experiences</h3>
+                <p>Interactive websites that make users say "WOW!" every single time.</p>
+            </div>
+            <div class="service-card">
+                <h3>Creative Campaigns</h3>
+                <p>Marketing that breaks through the noise with color and creativity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2 class="section-title">What Makes Us Different</h2>
+        <div class="features-grid">
+            <div class="feature-box">💥</div>
+            <div class="feature-box">🎨</div>
+            <div class="feature-box">⚡</div>
+            <div class="feature-box">🚀</div>
+        </div>
+    </section>
+
+    <!-- Select Template Button -->
+    <div class="select-template">
+        <a href="../website-intake.html?template=bold-vibrant" class="select-btn">✨ Select This Template</a>
+    </div>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Random emoji rotation
+        const emojis = ['💥', '🎨', '⚡', '🚀', '🌟', '💫', '🎯', '🔥'];
+        document.querySelectorAll('.feature-box').forEach(box => {
+            setInterval(() => {
+                box.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            }, 3000);
+        });
+    </script>
+</body>
+
+</html>

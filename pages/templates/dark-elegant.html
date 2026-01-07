@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark & Elegant Template | Noir Atelier</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Lato:wght@300;400&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: #0a0a0a;
+            color: #d4af37;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #000000 0%, #1a1a2e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('../../assets/images/template_elegant.png') center/cover;
+            opacity: 0.4;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem;
+            font-weight: 900;
+            color: #d4af37;
+            margin-bottom: 20px;
+            letter-spacing: 5px;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+            animation: fadeIn 2s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #c0c0c0;
+            margin-bottom: 50px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 18px 60px;
+            background: transparent;
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 400;
+            border: 2px solid #d4af37;
+            font-size: 1rem;
+            transition: all 0.4s ease;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .cta-btn:hover {
+            background: #d4af37;
+            color: #000;
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+        }
+
+        /* Collection Section */
+        .collection {
+            padding: 120px 40px;
+            background: #000;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 80px;
+            color: #d4af37;
+            letter-spacing: 3px;
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .collection-item {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            transition: all 0.5s ease;
+        }
+
+        .collection-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(0, 0, 0, 0.8));
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .collection-item:hover::before {
+            opacity: 1;
+        }
+
+        .collection-item:hover {
+            transform: scale(1.02);
+            border-color: #d4af37;
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3);
+        }
+
+        .collection-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 40px;
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
+        }
+
+        .collection-item:hover .collection-content {
+            transform: translateY(0);
+        }
+
+        .collection-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        .collection-content p {
+            color: #c0c0c0;
+            font-weight: 300;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 120px 40px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 50px 30px;
+            border: 1px solid #333;
+            background: rgba(26, 26, 26, 0.5);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+        }
+
+        .feature-card:hover {
+            border-color: #d4af37;
+            background: rgba(212, 175, 55, 0.05);
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #d4af37;
+        }
+
+        .feature-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: #c0c0c0;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /* Select Template Button */
+        .select-template {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 1000;
+        }
+
+        .select-btn {
+            padding: 20px 40px;
+            background: #d4af37;
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 0;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.4);
+            transition: all 0.3s ease;
+            display: inline-block;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .select-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>NOIR ATELIER</h1>
+            <p>Luxury Redefined</p>
+            <a href="#collection" class="cta-btn">Discover Collection</a>
+        </div>
+    </section>
+
+    <!-- Collection Section -->
+    <section class="collection" id="collection">
+        <h2 class="section-title">Signature Collection</h2>
+        <div class="collection-grid">
+            <div class="collection-item"
+                style="background-image: url('../../assets/images/midnight_series_marble.png'); background-size: cover; background-position: center;">
+                <div class="collection-content">
+                    <h3>Midnight Series</h3>
+                    <p>Timeless elegance in obsidian</p>
+                </div>
+            </div>
+            <div class="collection-item"
+                style="background-image: url('../../assets/images/golden_hour_marble.png'); background-size: cover; background-position: center;">
+                <div class="collection-content">
+                    <h3>Golden Hour</h3>
+                    <p>Radiance meets sophistication</p>
+                </div>
+            </div>
+            <div class="collection-item"
+                style="background-image: url('../../assets/images/velvet_dreams_marble.png'); background-size: cover; background-position: center;">
+                <div class="collection-content">
+                    <h3>Velvet Dreams</h3>
+                    <p>Luxury you can feel</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2 class="section-title">The Experience</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">◆</div>
+                <h3>Exclusivity</h3>
+                <p>Limited editions crafted for the discerning few</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✦</div>
+                <h3>Craftsmanship</h3>
+                <p>Meticulous attention to every detail</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">◈</div>
+                <h3>Heritage</h3>
+                <p>Timeless designs that transcend trends</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Select Template Button -->
+    <div class="select-template">
+        <a href="../website-intake.html?template=dark-elegant" class="select-btn">✨ Select This Template</a>
+    </div>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Parallax effect on hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero::before');
+            if (hero) {
+                document.querySelector('.hero').style.backgroundPositionY = scrolled * 0.5 + 'px';
+            }
+        });
+    </script>
+</body>
+
+</html>

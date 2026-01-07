@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Minimalist Template | Zenith Studio</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fafafa;
+            color: #1a1a1a;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.15;
+            filter: grayscale(100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            padding: 40px;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 300;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #666;
+            font-weight: 300;
+            margin-bottom: 40px;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 18px 50px;
+            background: #1a1a1a;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1.4s ease;
+        }
+
+        .cta-btn:hover {
+            background: #333;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 120px 40px;
+            background: #fff;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 80px;
+            letter-spacing: -1px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            padding: 40px;
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .service-card p {
+            color: #666;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 140px 40px;
+            background: #fff;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio-item {
+            aspect-ratio: 4/3;
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 60px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .portfolio-item:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .portfolio-item:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .portfolio-item:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .portfolio-item:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+            border-color: #1a1a1a;
+            background: #fff;
+        }
+
+        .project-number {
+            font-size: 1.1rem;
+            color: #bbb;
+            font-weight: 400;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover .project-number {
+            color: #1a1a1a;
+            letter-spacing: 5px;
+        }
+
+        .project-info {
+            width: 100%;
+        }
+
+        .portfolio-item h4 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+            letter-spacing: -2px;
+            line-height: 1.1;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover h4 {
+            letter-spacing: -3px;
+        }
+
+        .portfolio-item p {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-item:hover p {
+            color: #1a1a1a;
+            letter-spacing: 2px;
+        }
+
+        .project-arrow {
+            position: absolute;
+            bottom: 60px;
+            right: 60px;
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            opacity: 0.2;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .portfolio-item:hover .project-arrow {
+            opacity: 1;
+            transform: translateX(15px) scale(1.2);
+        }
+
+        /* Select Template Button */
+        .select-template {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 1000;
+        }
+
+        .select-btn {
+            padding: 20px 40px;
+            background: #1a1a1a;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .select-btn:hover {
+            background: #333;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .portfolio-item {
+                padding: 40px;
+            }
+
+            .portfolio-item h4 {
+                font-size: 2.5rem;
+                letter-spacing: -1px;
+            }
+
+            .portfolio-item p {
+                font-size: 0.95rem;
+            }
+
+            .project-arrow {
+                bottom: 40px;
+                right: 40px;
+                font-size: 2rem;
+            }
+
+            .select-template {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="../../assets/images/template_minimalist.png" alt="Minimalist Design" class="hero-bg">
+        <div class="hero-content">
+            <h1>Zenith Studio</h1>
+            <p>Architecture & Design Excellence</p>
+            <a href="#services" class="cta-btn">Explore Our Work</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">What We Do</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Architecture</h3>
+                <p>Creating timeless spaces that blend form and function with minimalist precision.</p>
+            </div>
+            <div class="service-card">
+                <h3>Interior Design</h3>
+                <p>Curating environments that breathe simplicity and sophistication.</p>
+            </div>
+            <div class="service-card">
+                <h3>Consultation</h3>
+                <p>Expert guidance to bring your vision to life with clarity and purpose.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio">
+        <h2 class="section-title">Selected Projects</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <span class="project-number">01</span>
+                <div class="project-info">
+                    <h4>Residence 01</h4>
+                    <p>Modern Living</p>
+                </div>
+                <span class="project-arrow">→</span>
+            </div>
+            <div class="portfolio-item">
+                <span class="project-number">02</span>
+                <div class="project-info">
+                    <h4>Studio Space</h4>
+                    <p>Creative Workspace</p>
+                </div>
+                <span class="project-arrow">→</span>
+            </div>
+            <div class="portfolio-item">
+                <span class="project-number">03</span>
+                <div class="project-info">
+                    <h4>Gallery 12</h4>
+                    <p>Exhibition Design</p>
+                </div>
+                <span class="project-arrow">→</span>
+            </div>
+            <div class="portfolio-item">
+                <span class="project-number">04</span>
+                <div class="project-info">
+                    <h4>Urban Loft</h4>
+                    <p>City Living</p>
+                </div>
+                <span class="project-arrow">→</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Select Template Button -->
+    <div class="select-template">
+        <a href="../website-intake.html?template=modern-minimalist" class="select-btn">✨ Select This Template</a>
+    </div>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
