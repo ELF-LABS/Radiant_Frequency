@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Tech Template | Nexus Labs</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: #0a0a0f;
+            color: #00f0ff;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a0033 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('../../assets/images/template_futuristic.png') center/cover;
+            opacity: 0.6;
+            animation: scan 8s linear infinite;
+        }
+
+        @keyframes scan {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .grid-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background:
+                linear-gradient(0deg, transparent 24%, rgba(0, 240, 255, 0.05) 25%, rgba(0, 240, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 240, 255, 0.05) 75%, rgba(0, 240, 255, 0.05) 76%, transparent 77%, transparent),
+                linear-gradient(90deg, transparent 24%, rgba(0, 240, 255, 0.05) 25%, rgba(0, 240, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 240, 255, 0.05) 75%, rgba(0, 240, 255, 0.05) 76%, transparent 77%, transparent);
+            background-size: 50px 50px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 6rem;
+            font-weight: 900;
+            color: #a855f7;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            -webkit-text-stroke: 2px #000;
+            text-stroke: 2px #000;
+            text-shadow:
+                0 0 10px #a855f7,
+                0 0 20px #a855f7,
+                0 0 40px #a855f7,
+                0 4px 8px rgba(0, 0, 0, 0.8);
+            animation: glitch 3s infinite;
+        }
+
+        @keyframes glitch {
+
+            0%,
+            100% {
+                transform: translate(0);
+            }
+
+            20% {
+                transform: translate(-2px, 2px);
+            }
+
+            40% {
+                transform: translate(-2px, -2px);
+            }
+
+            60% {
+                transform: translate(2px, 2px);
+            }
+
+            80% {
+                transform: translate(2px, -2px);
+            }
+        }
+
+        .hero p {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: #ffff00;
+            margin-bottom: 50px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            -webkit-text-stroke: 2px #000;
+            text-stroke: 2px #000;
+            text-shadow:
+                0 0 10px #ffff00,
+                0 0 20px #ffff00,
+                0 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 20px 60px;
+            background: rgba(168, 85, 247, 0.2);
+            color: #00f0ff;
+            text-decoration: none;
+            font-weight: 700;
+            border: 2px solid #a855f7;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+        }
+
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #a855f7;
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .cta-btn:hover::before {
+            left: 0;
+        }
+
+        .cta-btn:hover {
+            color: #000;
+            box-shadow: 0 6px 25px rgba(168, 85, 247, 0.8);
+            border-color: #a855f7;
+        }
+
+        /* Tech Section */
+        .tech {
+            padding: 120px 40px;
+            background: #0a0a0f;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 80px;
+            color: #00f0ff;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 0 0 20px #00f0ff;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tech-card {
+            background: rgba(0, 240, 255, 0.05);
+            border: 2px solid #00f0ff;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .tech-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #00f0ff, #a855f7, #00f0ff);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .tech-card:hover::before {
+            opacity: 1;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 240, 255, 0.4);
+        }
+
+        .tech-icon {
+            width: 100%;
+            aspect-ratio: 1;
+            margin-bottom: 20px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            border: 2px solid #00f0ff;
+        }
+
+        .tech-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            color: #00f0ff;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .tech-card p {
+            color: #c0c0c0;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* Innovation Section */
+        .innovation {
+            padding: 120px 40px;
+            background: linear-gradient(135deg, #1a0033 0%, #0a0a0f 100%);
+        }
+
+        .innovation-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #00f0ff;
+        }
+
+        .innovation-item {
+            aspect-ratio: 16/9;
+            background: #0a0a0f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: #00f0ff;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .innovation-item::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, #00f0ff, transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .innovation-item:hover::before {
+            transform: translateX(100%);
+        }
+
+        .innovation-item:hover {
+            background: rgba(0, 240, 255, 0.1);
+            text-shadow: 0 0 20px #00f0ff;
+        }
+
+        /* Select Template Button */
+        .select-template {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 1000;
+        }
+
+        .select-btn {
+            padding: 20px 40px;
+            background: #00f0ff;
+            color: #0a0a0f;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 0;
+            box-shadow: 0 10px 40px rgba(0, 240, 255, 0.5);
+            transition: all 0.3s ease;
+            display: inline-block;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .select-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(0, 240, 255, 0.7);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .innovation-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="grid-overlay"></div>
+        <div class="hero-content">
+            <h1>NEXUS LABS</h1>
+            <p>Building Tomorrow's Technology</p>
+            <a href="#tech" class="cta-btn">Initialize</a>
+        </div>
+    </section>
+
+    <!-- Tech Section -->
+    <section class="tech" id="tech">
+        <h2 class="section-title">Core Systems</h2>
+        <div class="tech-grid">
+            <div class="tech-card">
+                <div class="tech-icon" style="background-image: url('../../assets/images/tech_quantum_computing.png');">
+                </div>
+                <h3>Quantum Computing</h3>
+                <p>Harnessing quantum mechanics to solve impossible problems at unprecedented speeds.</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon" style="background-image: url('../../assets/images/tech_neural_networks.png');">
+                </div>
+                <h3>Neural Networks</h3>
+                <p>Advanced AI systems that learn, adapt, and evolve beyond human capabilities.</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon"
+                    style="background-image: url('../../assets/images/tech_blockchain_security.png');"></div>
+                <h3>Blockchain Security</h3>
+                <p>Decentralized infrastructure ensuring data integrity and user sovereignty.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Innovation Section -->
+    <section class="innovation">
+        <h2 class="section-title">Innovation Matrix</h2>
+        <div class="innovation-grid">
+            <div class="innovation-item">AI RESEARCH</div>
+            <div class="innovation-item">ROBOTICS</div>
+            <div class="innovation-item">BIOTECH</div>
+            <div class="innovation-item">SPACE TECH</div>
+        </div>
+    </section>
+
+    <!-- Select Template Button -->
+    <div class="select-template">
+        <a href="../website-intake.html?template=futuristic-tech" class="select-btn">✨ SELECT TEMPLATE</a>
+    </div>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Random tech terms rotation
+        const techTerms = ['AI RESEARCH', 'ROBOTICS', 'BIOTECH', 'SPACE TECH', 'NANOTECH', 'FUSION ENERGY', 'QUANTUM LEAP', 'NEURAL LINK'];
+        document.querySelectorAll('.innovation-item').forEach(item => {
+            setInterval(() => {
+                item.textContent = techTerms[Math.floor(Math.random() * techTerms.length)];
+            }, 4000);
+        });
+    </script>
+</body>
+
+</html>

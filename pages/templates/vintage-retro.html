@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vintage/Retro Template | Golden Era Goods</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lora:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background: #f4e8d0;
+            color: #3e2723;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #d4a574 0%, #c9945f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('../../assets/images/template_vintage.png') center/cover;
+            opacity: 0.4;
+        }
+
+        .vintage-border {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 8px double #8b4513;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 60px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 4px solid #8b4513;
+            box-shadow:
+                inset 0 0 0 8px #f4e8d0,
+                inset 0 0 0 12px #8b4513,
+                0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero h1 {
+            font-family: 'Abril Fatface', cursive;
+            font-size: 5rem;
+            color: #8b4513;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .hero .tagline {
+            font-size: 1.3rem;
+            color: #d4a574;
+            margin-bottom: 10px;
+            font-style: italic;
+            letter-spacing: 2px;
+        }
+
+        .hero .est {
+            font-size: 1rem;
+            color: #8b4513;
+            margin-bottom: 40px;
+            letter-spacing: 3px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 18px 50px;
+            background: #8b4513;
+            color: #f4e8d0;
+            text-decoration: none;
+            font-weight: 600;
+            border: 3px solid #5d2f0f;
+            transition: all 0.3s ease;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-btn:hover {
+            background: #5d2f0f;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Collection Section */
+        .collection {
+            padding: 120px 40px;
+            background: #fff;
+        }
+
+        .section-title {
+            font-family: 'Abril Fatface', cursive;
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #8b4513;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #d4a574;
+            margin-bottom: 80px;
+            font-style: italic;
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .collection-item {
+            background: #f4e8d0;
+            border: 6px solid #8b4513;
+            padding: 40px;
+            text-align: center;
+            box-shadow:
+                inset 0 0 0 4px #fff,
+                0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .collection-item:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                inset 0 0 0 4px #fff,
+                0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .collection-icon {
+            width: 100%;
+            aspect-ratio: 1;
+            margin-bottom: 20px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            border: 3px solid #8b4513;
+        }
+
+        .collection-item h3 {
+            font-family: 'Abril Fatface', cursive;
+            font-size: 2rem;
+            color: #8b4513;
+            margin-bottom: 15px;
+        }
+
+        .collection-item p {
+            color: #5d2f0f;
+            line-height: 1.8;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 120px 40px;
+            background: linear-gradient(135deg, #f4e8d0 0%, #e8d5b7 100%);
+            position: relative;
+        }
+
+        .features::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(139, 69, 19, 0.03) 2px,
+                    rgba(139, 69, 19, 0.03) 4px);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 50px 40px;
+            border: 4px solid #8b4513;
+            text-align: center;
+            box-shadow:
+                inset 0 0 0 2px #f4e8d0,
+                0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .ornament {
+            font-size: 2rem;
+            color: #d4a574;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-family: 'Abril Fatface', cursive;
+            font-size: 1.8rem;
+            color: #8b4513;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: #5d2f0f;
+            line-height: 1.8;
+        }
+
+        /* Select Template Button */
+        .select-template {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 1000;
+        }
+
+        .select-btn {
+            padding: 20px 40px;
+            background: #8b4513;
+            color: #f4e8d0;
+            text-decoration: none;
+            font-weight: 600;
+            border: 3px solid #5d2f0f;
+            box-shadow: 0 10px 40px rgba(139, 69, 19, 0.4);
+            transition: all 0.3s ease;
+            display: inline-block;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .select-btn:hover {
+            background: #5d2f0f;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(139, 69, 19, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="vintage-border"></div>
+        <div class="hero-content">
+            <h1>Golden Era Goods</h1>
+            <p class="tagline">Timeless Treasures from Bygone Days</p>
+            <p class="est">EST. 1925</p>
+            <a href="#collection" class="cta-btn">Browse Collection</a>
+        </div>
+    </section>
+
+    <!-- Collection Section -->
+    <section class="collection" id="collection">
+        <h2 class="section-title">Curated Collection</h2>
+        <p class="section-subtitle">Each piece tells a story</p>
+        <div class="collection-grid">
+            <div class="collection-item">
+                <div class="collection-icon"
+                    style="background-image: url('../../assets/images/vintage_electronics.png');"></div>
+                <h3>Vintage Electronics</h3>
+                <p>Restored radios, phonographs, and cameras from the golden age of craftsmanship.</p>
+            </div>
+            <div class="collection-item">
+                <div class="collection-icon" style="background-image: url('../../assets/images/vintage_apparel.png');">
+                </div>
+                <h3>Classic Apparel</h3>
+                <p>Authentic vintage clothing and accessories that never go out of style.</p>
+            </div>
+            <div class="collection-item">
+                <div class="collection-icon"
+                    style="background-image: url('../../assets/images/vintage_antique_decor.png');"></div>
+                <h3>Antique Decor</h3>
+                <p>Timeless pieces to bring character and charm to any space.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2 class="section-title">Our Promise</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="ornament">❦</div>
+                <h3>Authenticity</h3>
+                <p>Every item is carefully verified and authenticated by our expert curators.</p>
+            </div>
+            <div class="feature-card">
+                <div class="ornament">✤</div>
+                <h3>Restoration</h3>
+                <p>Professional restoration services to preserve the beauty of each piece.</p>
+            </div>
+            <div class="feature-card">
+                <div class="ornament">❧</div>
+                <h3>Heritage</h3>
+                <p>Connecting you with history through objects that have stood the test of time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Select Template Button -->
+    <div class="select-template">
+        <a href="../website-intake.html?template=vintage-retro" class="select-btn">✨ Select This Template</a>
+    </div>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

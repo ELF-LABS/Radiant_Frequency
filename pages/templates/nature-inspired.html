@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature-Inspired Template | Terra Botanica</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #f5f5dc;
+            color: #2d5016;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #a8d5ba 0%, #7fb069 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('../../assets/images/template_nature.png') center/cover;
+            opacity: 0.5;
+        }
+
+        .floating-leaves {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .leaf {
+            position: absolute;
+            font-size: 2rem;
+            animation: float 15s infinite ease-in-out;
+            opacity: 0.3;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 5rem;
+            font-weight: 700;
+            color: #2d5016;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #5a7c4a;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 18px 50px;
+            background: #7fb069;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(127, 176, 105, 0.3);
+        }
+
+        .cta-btn:hover {
+            background: #5a7c4a;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(127, 176, 105, 0.5);
+        }
+
+        /* Mission Section */
+        .mission {
+            padding: 120px 40px;
+            background: #fff;
+        }
+
+        .section-title {
+            font-family: 'Merriweather', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2d5016;
+        }
+
+        .mission-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 2;
+            color: #5a7c4a;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 120px 40px;
+            background: linear-gradient(135deg, #f5f5dc 0%, #e8f5e9 100%);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(127, 176, 105, 0.3);
+        }
+
+        .product-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .product-content {
+            padding: 30px;
+        }
+
+        .product-content h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+            color: #2d5016;
+            margin-bottom: 15px;
+        }
+
+        .product-content p {
+            color: #5a7c4a;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .product-tag {
+            display: inline-block;
+            padding: 8px 20px;
+            background: #e8f5e9;
+            color: #2d5016;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Values Section */
+        .values {
+            padding: 120px 40px;
+            background: #fff;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .value-item {
+            text-align: center;
+        }
+
+        .value-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .value-item h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            color: #2d5016;
+            margin-bottom: 15px;
+        }
+
+        .value-item p {
+            color: #5a7c4a;
+            line-height: 1.8;
+        }
+
+        /* Select Template Button */
+        .select-template {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 1000;
+        }
+
+        .select-btn {
+            padding: 20px 40px;
+            background: #7fb069;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            box-shadow: 0 10px 40px rgba(127, 176, 105, 0.4);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .select-btn:hover {
+            background: #5a7c4a;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(127, 176, 105, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="floating-leaves">
+            <div class="leaf" style="left: 10%; animation-delay: 0s;">🍃</div>
+            <div class="leaf" style="left: 30%; animation-delay: 2s;">🌿</div>
+            <div class="leaf" style="left: 50%; animation-delay: 4s;">🍃</div>
+            <div class="leaf" style="left: 70%; animation-delay: 6s;">🌿</div>
+            <div class="leaf" style="left: 90%; animation-delay: 8s;">🍃</div>
+        </div>
+        <div class="hero-content">
+            <h1>Terra Botanica</h1>
+            <p>Sustainable Living, Naturally</p>
+            <a href="#mission" class="cta-btn">Discover Our Story</a>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission" id="mission">
+        <h2 class="section-title">Our Mission</h2>
+        <div class="mission-content">
+            <p>We believe in harmony with nature. Every product we create is thoughtfully designed to minimize
+                environmental impact while maximizing beauty and functionality. Join us in creating a greener tomorrow.
+            </p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image"
+                    style="background-image: url('../../assets/images/nature_eco_essentials.png');"></div>
+                <div class="product-content">
+                    <h3>Eco Essentials</h3>
+                    <p>Daily necessities crafted from sustainable materials</p>
+                    <span class="product-tag">100% Organic</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image"
+                    style="background-image: url('../../assets/images/nature_garden_collection.png');"></div>
+                <div class="product-content">
+                    <h3>Garden Collection</h3>
+                    <p>Bring nature into your home with our botanical line</p>
+                    <span class="product-tag">Eco-Friendly</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image"
+                    style="background-image: url('../../assets/images/nature_wellness_series.png');"></div>
+                <div class="product-content">
+                    <h3>Wellness Series</h3>
+                    <p>Natural products for mind, body, and soul</p>
+                    <span class="product-tag">Sustainable</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values">
+        <h2 class="section-title">Our Values</h2>
+        <div class="values-grid">
+            <div class="value-item">
+                <div class="value-icon">🌍</div>
+                <h3>Earth First</h3>
+                <p>Every decision considers our planet's wellbeing</p>
+            </div>
+            <div class="value-item">
+                <div class="value-icon">♻️</div>
+                <h3>Zero Waste</h3>
+                <p>Committed to circular economy principles</p>
+            </div>
+            <div class="value-item">
+                <div class="value-icon">🌳</div>
+                <h3>Give Back</h3>
+                <p>One purchase = One tree planted</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Select Template Button -->
+    <div class="select-template">
+        <a href="../website-intake.html?template=nature-inspired" class="select-btn">✨ Select This Template</a>
+    </div>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
