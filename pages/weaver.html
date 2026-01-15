@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weaver | Radiant Frequency</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="theme-vision">
+    <div class="container">
+        <div class="hero-container">
+            <img src="../assets/images/vision_hero.png" alt="Weaver Archetype" class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="nav-controls">
+            <a href="archetypes.html" class="back-button" style="margin-bottom: 0;">❖ Back to Archetypes</a>
+        </div>
+
+        <header style="text-align: center; margin-bottom: 50px;">
+            <h1 class="page-title" style="color: #ff00ff;">Weaver</h1>
+            <p class="subtitle">The Creator. The Artist. Synthesis and beauty.</p>
+        </header>
+
+        <section class="content-section">
+            <!-- Origin Story -->
+            <div style="margin-bottom: 50px;">
+                <h2 style="color: #ff00ff; margin-bottom: 20px;">Origin</h2>
+                <p style="line-height: 1.8; font-size: 1.1rem;">
+                    You see connections others miss. You take disparate threads—ideas, people, systems—and weave them into something beautiful. You are the artist, the synthesizer, the one who makes the invisible visible. You are the Weaver.
+                </p>
+            </div>
+
+            <!-- Strengths -->
+            <div style="margin-bottom: 50px;">
+                <h2 style="color: #ff00ff; margin-bottom: 20px;">Strengths</h2>
+                <ul style="line-height: 1.8; font-size: 1.05rem; list-style-position: inside;">
+                    <li>Creative synthesis and pattern recognition</li>
+                    <li>Ability to connect diverse ideas</li>
+                    <li>Aesthetic sensibility and design thinking</li>
+                    <li>Holistic perspective</li>
+                    <li>Innovation through combination</li>
+                </ul>
+            </div>
+
+            <!-- Shadows -->
+            <div style="margin-bottom: 50px;">
+                <h2 style="color: #ff00ff; margin-bottom: 20px;">Shadows & Weaknesses</h2>
+                <ul style="line-height: 1.8; font-size: 1.05rem; list-style-position: inside;">
+                    <li>Can become scattered across too many projects</li>
+                    <li>May struggle with linear execution</li>
+                    <li>Risk of over-complicating simple solutions</li>
+                    <li>Can lose focus in the details</li>
+                    <li>May prioritize beauty over function</li>
+                </ul>
+            </div>
+
+            <!-- How to Embody -->
+            <div style="margin-bottom: 50px; padding: 30px; background: rgba(255,255,255,0.03); border-radius: 16px; border-left: 4px solid #ff00ff;">
+                <h2 style="color: #ff00ff; margin-bottom: 20px;">How to Embody This Archetype</h2>
+                <p style="line-height: 1.8; font-size: 1.1rem;">
+                    Collect your threads. Find the patterns. Trust your intuition. Create something that didn't exist before. Remember: the whole is greater than the sum of its parts.
+                </p>
+            </div>
+
+            <!-- AI Companion Note -->
+            <div style="margin-top: 60px; padding: 30px; background: rgba(255,255,255,0.03); border-radius: 16px; text-align: center;">
+                <h3 style="color: var(--primary-color); margin-bottom: 15px;">Your AI Companion</h3>
+                <p style="line-height: 1.6; opacity: 0.9;">
+                    When you choose <strong style="color: #ff00ff;">Weaver</strong> as your archetype, your AI companion will adapt to support your unique strengths and help you navigate your shadows. Together, you'll build a partnership that honors who you are and who you're becoming.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Mirror top navigation to bottom
+        const topNav = document.querySelector('.nav-controls');
+        if (topNav) {
+            const bottomNav = topNav.cloneNode(true);
+            bottomNav.style.marginTop = '60px';
+            document.querySelector('.container').appendChild(bottomNav);
+        }
+    </script>
+</body>
+
+</html>

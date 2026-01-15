@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentinel | Radiant Frequency</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="theme-vision">
+    <div class="container">
+        <div class="hero-container">
+            <img src="../assets/images/vision_hero.png" alt="Sentinel Archetype" class="hero-image">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="nav-controls">
+            <a href="archetypes.html" class="back-button" style="margin-bottom: 0;">❖ Back to Archetypes</a>
+        </div>
+
+        <header style="text-align: center; margin-bottom: 50px;">
+            <h1 class="page-title" style="color: #ff3333;">Sentinel</h1>
+            <p class="subtitle">The Guardian. The Protector. Vigilance and defense.</p>
+        </header>
+
+        <section class="content-section">
+            <!-- Origin Story -->
+            <div style="margin-bottom: 50px;">
+                <h2 style="color: #ff3333; margin-bottom: 20px;">Origin</h2>
+                <p style="line-height: 1.8; font-size: 1.1rem;">
+                    You stand watch. You see the threats others don't. You protect what matters—people, systems, values. You are the first line of defense and the last resort. You are the Sentinel.
+                </p>
+            </div>
+
+            <!-- Strengths -->
+            <div style="margin-bottom: 50px;">
+                <h2 style="color: #ff3333; margin-bottom: 20px;">Strengths</h2>
+                <ul style="line-height: 1.8; font-size: 1.05rem; list-style-position: inside;">
+                    <li>Vigilance and threat detection</li>
+                    <li>Protective instincts and loyalty</li>
+                    <li>Risk assessment and mitigation</li>
+                    <li>Strong boundaries and principles</li>
+                    <li>Courage under pressure</li>
+                </ul>
+            </div>
+
+            <!-- Shadows -->
+            <div style="margin-bottom: 50px;">
+                <h2 style="color: #ff3333; margin-bottom: 20px;">Shadows & Weaknesses</h2>
+                <ul style="line-height: 1.8; font-size: 1.05rem; list-style-position: inside;">
+                    <li>Can become hypervigilant or paranoid</li>
+                    <li>May see threats where none exist</li>
+                    <li>Risk of isolation through over-protection</li>
+                    <li>Can struggle with trust</li>
+                    <li>May prioritize security over growth</li>
+                </ul>
+            </div>
+
+            <!-- How to Embody -->
+            <div style="margin-bottom: 50px; padding: 30px; background: rgba(255,255,255,0.03); border-radius: 16px; border-left: 4px solid #ff3333;">
+                <h2 style="color: #ff3333; margin-bottom: 20px;">How to Embody This Archetype</h2>
+                <p style="line-height: 1.8; font-size: 1.1rem;">
+                    Define your boundaries. Know what you're protecting and why. Stay alert but not anxious. Remember: true protection creates safety for others to thrive.
+                </p>
+            </div>
+
+            <!-- AI Companion Note -->
+            <div style="margin-top: 60px; padding: 30px; background: rgba(255,255,255,0.03); border-radius: 16px; text-align: center;">
+                <h3 style="color: var(--primary-color); margin-bottom: 15px;">Your AI Companion</h3>
+                <p style="line-height: 1.6; opacity: 0.9;">
+                    When you choose <strong style="color: #ff3333;">Sentinel</strong> as your archetype, your AI companion will adapt to support your unique strengths and help you navigate your shadows. Together, you'll build a partnership that honors who you are and who you're becoming.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Mirror top navigation to bottom
+        const topNav = document.querySelector('.nav-controls');
+        if (topNav) {
+            const bottomNav = topNav.cloneNode(true);
+            bottomNav.style.marginTop = '60px';
+            document.querySelector('.container').appendChild(bottomNav);
+        }
+    </script>
+</body>
+
+</html>

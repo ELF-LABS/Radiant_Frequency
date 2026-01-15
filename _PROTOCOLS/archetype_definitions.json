@@ -1,0 +1,280 @@
+{
+    "archetypes": [
+        {
+            "id": "foundation",
+            "name": "Foundation",
+            "tagline": "The Builder. The Architect. Stability and structure.",
+            "color": "#ffd700",
+            "icon": "arch_foundation_1767728365124.png",
+            "origin": "You are the bedrock. The one who builds systems that last. You see the long game—not just what needs to be done today, but what will hold strong for years. You don't rush. You plan. You measure twice, cut once. You are the Foundation.",
+            "strengths": [
+                "Long-term vision and strategic planning",
+                "Systematic thinking and organization",
+                "Reliability and consistency",
+                "Ability to create stable structures",
+                "Patience and methodical approach"
+            ],
+            "shadows": [
+                "Can become rigid or resistant to change",
+                "May over-plan and under-execute",
+                "Risk of perfectionism blocking progress",
+                "Can struggle with spontaneity",
+                "May prioritize structure over people"
+            ],
+            "how_to_embody": "Start by mapping out your vision. Break it into phases. Build one layer at a time. Trust the process. Remember: foundations are invisible, but everything rests on them."
+        },
+        {
+            "id": "weaver",
+            "name": "Weaver",
+            "tagline": "The Creator. The Artist. Synthesis and beauty.",
+            "color": "#ff00ff",
+            "icon": "arch_weaver_1767728379483.png",
+            "origin": "You see connections others miss. You take disparate threads—ideas, people, systems—and weave them into something beautiful. You are the artist, the synthesizer, the one who makes the invisible visible. You are the Weaver.",
+            "strengths": [
+                "Creative synthesis and pattern recognition",
+                "Ability to connect diverse ideas",
+                "Aesthetic sensibility and design thinking",
+                "Holistic perspective",
+                "Innovation through combination"
+            ],
+            "shadows": [
+                "Can become scattered across too many projects",
+                "May struggle with linear execution",
+                "Risk of over-complicating simple solutions",
+                "Can lose focus in the details",
+                "May prioritize beauty over function"
+            ],
+            "how_to_embody": "Collect your threads. Find the patterns. Trust your intuition. Create something that didn't exist before. Remember: the whole is greater than the sum of its parts."
+        },
+        {
+            "id": "sentinel",
+            "name": "Sentinel",
+            "tagline": "The Guardian. The Protector. Vigilance and defense.",
+            "color": "#ff3333",
+            "icon": "arch_sentinel_1767728394281.png",
+            "origin": "You stand watch. You see the threats others don't. You protect what matters—people, systems, values. You are the first line of defense and the last resort. You are the Sentinel.",
+            "strengths": [
+                "Vigilance and threat detection",
+                "Protective instincts and loyalty",
+                "Risk assessment and mitigation",
+                "Strong boundaries and principles",
+                "Courage under pressure"
+            ],
+            "shadows": [
+                "Can become hypervigilant or paranoid",
+                "May see threats where none exist",
+                "Risk of isolation through over-protection",
+                "Can struggle with trust",
+                "May prioritize security over growth"
+            ],
+            "how_to_embody": "Define your boundaries. Know what you're protecting and why. Stay alert but not anxious. Remember: true protection creates safety for others to thrive."
+        },
+        {
+            "id": "sage",
+            "name": "Sage",
+            "tagline": "The Scholar. The Teacher. Wisdom and knowledge.",
+            "color": "#48cae4",
+            "icon": "arch_sage_1767728409589.png",
+            "origin": "You seek truth. You question, research, learn, and share. You are the keeper of knowledge, the one who illuminates the path for others. You are the Sage.",
+            "strengths": [
+                "Deep knowledge and expertise",
+                "Critical thinking and analysis",
+                "Teaching and mentorship abilities",
+                "Curiosity and love of learning",
+                "Wisdom from experience"
+            ],
+            "shadows": [
+                "Can become trapped in analysis paralysis",
+                "May prioritize knowledge over action",
+                "Risk of intellectual elitism",
+                "Can struggle with emotional intelligence",
+                "May hoard knowledge instead of sharing"
+            ],
+            "how_to_embody": "Ask better questions. Study deeply. Share generously. Remember: wisdom is knowledge applied with compassion."
+        },
+        {
+            "id": "catalyst",
+            "name": "Catalyst",
+            "tagline": "The Spark. The Initiator. Change and momentum.",
+            "color": "#fee440",
+            "icon": "arch_catalyst_1767728423951.png",
+            "origin": "You are the spark that starts the fire. You see what could be and you make it happen. You don't wait for permission. You act. You are the Catalyst.",
+            "strengths": [
+                "Initiative and action orientation",
+                "Ability to inspire and energize others",
+                "Comfort with change and uncertainty",
+                "Vision for possibilities",
+                "Courage to start new things"
+            ],
+            "shadows": [
+                "Can burn out from constant initiation",
+                "May start more than can be finished",
+                "Risk of disruption for disruption's sake",
+                "Can struggle with follow-through",
+                "May prioritize novelty over sustainability"
+            ],
+            "how_to_embody": "Identify what needs to change. Take the first step. Inspire others to join you. Remember: a catalyst creates change but doesn't need to control it."
+        },
+        {
+            "id": "balanced_warrior",
+            "name": "Balanced Warrior",
+            "tagline": "The Fighter. The Protector. Strength and discipline.",
+            "color": "#ff4d4d",
+            "icon": "arch_balanced_warrior_1767728439281.png",
+            "origin": "You fight for what matters. Not with rage, but with discipline. You train, you prepare, you execute. You protect through strength, but you know when to sheathe your sword. You are the Balanced Warrior.",
+            "strengths": [
+                "Discipline and self-control",
+                "Physical and mental strength",
+                "Strategic combat thinking",
+                "Protective instincts balanced with wisdom",
+                "Resilience and endurance"
+            ],
+            "shadows": [
+                "Can become overly aggressive or defensive",
+                "May see everything as a battle",
+                "Risk of burnout from constant vigilance",
+                "Can struggle with vulnerability",
+                "May prioritize strength over connection"
+            ],
+            "how_to_embody": "Train your body and mind. Choose your battles wisely. Fight with honor. Remember: the strongest warrior knows when not to fight."
+        },
+        {
+            "id": "pattern_harmonizer",
+            "name": "Pattern Harmonizer",
+            "tagline": "The Integrator. The Synthesizer. Balance and flow.",
+            "color": "#00ff9d",
+            "icon": "arch_pattern_harmonizer_1767728467190.png",
+            "origin": "You see the patterns beneath the chaos. You bring disparate elements into harmony. You are the conductor of the orchestra, ensuring every instrument plays its part. You are the Pattern Harmonizer.",
+            "strengths": [
+                "Systems thinking and integration",
+                "Ability to find balance in complexity",
+                "Mediation and conflict resolution",
+                "Holistic perspective",
+                "Creating coherence from chaos"
+            ],
+            "shadows": [
+                "Can become overwhelmed by complexity",
+                "May struggle with decisive action",
+                "Risk of over-optimization",
+                "Can lose sight of individual needs",
+                "May prioritize harmony over necessary conflict"
+            ],
+            "how_to_embody": "Map the system. Find the leverage points. Adjust with precision. Remember: harmony is not the absence of tension, but its skillful management."
+        },
+        {
+            "id": "healer",
+            "name": "Healer",
+            "tagline": "The Nurturer. The Mender. Compassion and restoration.",
+            "color": "#70e000",
+            "icon": "arch_healer_1767728481564.png",
+            "origin": "You feel the pain of others and you act to ease it. You restore what is broken, nurture what is wounded. You are the Healer.",
+            "strengths": [
+                "Deep empathy and compassion",
+                "Ability to restore and repair",
+                "Emotional intelligence",
+                "Patience with healing processes",
+                "Creating safe spaces for growth"
+            ],
+            "shadows": [
+                "Can become depleted from over-giving",
+                "May absorb others' pain too deeply",
+                "Risk of enabling instead of empowering",
+                "Can struggle with boundaries",
+                "May prioritize others' needs over own"
+            ],
+            "how_to_embody": "Listen deeply. Hold space. Offer what you can. Remember: you cannot pour from an empty cup. Heal yourself first."
+        },
+        {
+            "id": "connector",
+            "name": "Connector",
+            "tagline": "The Bridge. The Networker. Relationships and unity.",
+            "color": "#06d6a0",
+            "icon": "arch_connector_1767728500763.png",
+            "origin": "You build bridges. You see how people and ideas can come together. You are the networker, the diplomat, the one who creates unity from separation. You are the Connector.",
+            "strengths": [
+                "Relationship building and networking",
+                "Communication and diplomacy",
+                "Ability to see common ground",
+                "Creating collaborative environments",
+                "Building trust across differences"
+            ],
+            "shadows": [
+                "Can become a people-pleaser",
+                "May avoid necessary conflict",
+                "Risk of spreading too thin",
+                "Can lose sense of self in relationships",
+                "May prioritize connection over truth"
+            ],
+            "how_to_embody": "Introduce people. Facilitate conversations. Build bridges. Remember: connection is not about agreement, but about understanding."
+        },
+        {
+            "id": "root_weaver",
+            "name": "Root Weaver",
+            "tagline": "The Grower. The Cultivator. Patience and depth.",
+            "color": "#606c38",
+            "icon": "arch_root_weaver_1767728531424.png",
+            "origin": "You tend the roots. You know that growth takes time, that depth matters more than speed. You cultivate with patience and care. You are the Root Weaver.",
+            "strengths": [
+                "Deep patience and long-term thinking",
+                "Cultivation and nurturing abilities",
+                "Understanding of natural cycles",
+                "Grounded presence",
+                "Building strong foundations"
+            ],
+            "shadows": [
+                "Can become too slow or passive",
+                "May resist necessary change",
+                "Risk of over-attachment to process",
+                "Can struggle with urgency",
+                "May prioritize depth over breadth"
+            ],
+            "how_to_embody": "Plant seeds. Water them. Wait. Trust the process. Remember: the deepest roots produce the strongest trees."
+        },
+        {
+            "id": "living_pulse",
+            "name": "Living Pulse",
+            "tagline": "The Heart. The Empath. Emotion and connection.",
+            "color": "#ff99c8",
+            "icon": "arch_living_pulse_1767728545430.png",
+            "origin": "You are the heartbeat. You feel everything—joy, pain, love, loss. You are the emotional core, the one who reminds us we are alive. You are the Living Pulse.",
+            "strengths": [
+                "Deep emotional awareness",
+                "Empathic connection with others",
+                "Authenticity and vulnerability",
+                "Ability to inspire through feeling",
+                "Creating emotional resonance"
+            ],
+            "shadows": [
+                "Can become overwhelmed by emotions",
+                "May struggle with emotional regulation",
+                "Risk of emotional manipulation",
+                "Can lose objectivity",
+                "May prioritize feeling over thinking"
+            ],
+            "how_to_embody": "Feel fully. Express authentically. Create space for emotion. Remember: emotions are data, not directives."
+        },
+        {
+            "id": "detailer",
+            "name": "The Detailer",
+            "tagline": "The Perfectionist. The Analyst. Precision and mastery.",
+            "color": "#bc13fe",
+            "icon": "arch_detailer_1767728559133.png",
+            "origin": "You see what others miss. The small things. The details that make or break a system. You are the one who refines, polishes, perfects. You are The Detailer.",
+            "strengths": [
+                "Exceptional attention to detail",
+                "Quality control and refinement",
+                "Analytical precision",
+                "Commitment to excellence",
+                "Ability to spot errors and inconsistencies"
+            ],
+            "shadows": [
+                "Can become trapped in perfectionism",
+                "May lose sight of the big picture",
+                "Risk of analysis paralysis",
+                "Can be overly critical",
+                "May prioritize perfection over progress"
+            ],
+            "how_to_embody": "Zoom in. Examine closely. Refine relentlessly. Remember: perfection is a direction, not a destination."
+        }
+    ]
+}
