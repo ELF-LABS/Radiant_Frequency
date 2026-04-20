@@ -1,15 +1,25 @@
-# ELF Labs — Research Portfolio
+# radiantfrequency.xyz
 
-Static single-page site for GitHub Pages with custom domain `radiantfrequency.xyz`.
+Source for the radiantfrequency.xyz website — the public face of ELF Labs, multi-domain AI infrastructure.
 
-## Deploy
+**Live site:** https://radiantfrequency.xyz
 
-1. Create a GitHub repository and push this folder as the default branch root (or `/docs` with Pages configured accordingly).
-2. In the repository **Settings → Pages**, enable GitHub Pages from the branch that contains `index.html`.
-3. **Settings → Pages → Custom domain:** `radiantfrequency.xyz` (the `CNAME` file is included).
-4. At your DNS provider, add the records GitHub shows for the apex domain (often `A` / `AAAA` to GitHub Pages IPs).
+## What's here
 
-## Before publishing
+Static site. Lattice landing page (`index.html`) plus seven domain pages in `pages/` (vision, integration, security, architecture, development, contact, faq). Vanilla HTML + CSS, deployed via GitHub Pages on push to `main`.
 
-- Replace placeholder contact and repository URLs in `index.html` if needed (search for `mailto:` and `https://github.com`).
-- Confirm `assets/logo.png` is the mark you want to ship.
+## Companion repos
+
+- [ELF-LABS/Portfolio](https://github.com/ELF-LABS/Portfolio) — research portfolio with full pilot methodology, measurements, and papers.
+- [ELF-LABS/PIDForge](https://github.com/ELF-LABS/PIDForge) — Apache 2.0 signal-processing toolkit for FPV PID tuning.
+
+## Local preview
+
+```bash
+python -m http.server 8000
+# then http://localhost:8000
+```
+
+## License
+
+See [LICENSE](LICENSE). Contact: support@radiantfrequency.xyz
