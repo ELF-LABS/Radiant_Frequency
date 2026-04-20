@@ -5,33 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="ELF Labs — reinforcement learning infrastructure for self-improving language model systems. Research portfolio.">
+        content="Radiant Frequency — ELF Labs multi-domain AI infrastructure: research, deployment, shells, hardware, Meadow.">
     <meta name="theme-color" content="#0a0a0a">
-    <title>ELF Labs — RL Research Portfolio</title>
+    <title>Radiant Frequency — ELF Labs</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="assets/logo.png" type="image/png">
 </head>
 
 <body class="portfolio-site">
-    <a class="skip-link" href="#research">Skip to research</a>
+    <a class="skip-link" href="#lattice">Skip to lattice</a>
 
     <header class="site-header">
-        <a class="brand-lockup" href="#top" aria-label="ELF Labs home">
+        <a class="brand-lockup" href="index.html" aria-label="Radiant Frequency home">
             <img src="assets/logo.png" width="44" height="44" alt="" decoding="async">
-            <span>ELF Labs</span>
+            <span>Radiant Frequency</span>
         </a>
         <nav class="site-nav" aria-label="Primary">
-            <a href="#research">Research</a>
-            <a href="#measurements">Measurements</a>
-            <a href="#open-source">Open source</a>
-            <a href="#infrastructure">Infrastructure</a>
-            <a href="#papers">Papers</a>
-            <a href="#contact">Contact</a>
+            <a href="#lattice">Lattice</a>
+            <a href="pages/contact.html">Contact</a>
+            <a href="https://github.com/ELF-LABS" rel="noopener noreferrer">GitHub</a>
         </nav>
     </header>
 
     <main id="top">
-        <!-- Narrative: fertile ideation → structured signals → validated stack → unified release -->
         <section class="hero" aria-labelledby="hero-title">
             <div class="hero-grid">
                 <div class="hero-visual">
@@ -39,240 +35,91 @@
                         width="1200" height="750">
                 </div>
                 <div class="hero-copy">
-                    <p class="hero-eyebrow">From exploration to deployment</p>
-                    <h1 id="hero-title" class="hero-title">ELF Labs</h1>
-                    <p class="hero-tagline">Reinforcement learning infrastructure for self-improving AI systems</p>
-                    <p class="hero-sub">Independent research on closed-loop training, adapter routing, ensemble
-                        disagreement, and physics-informed validation.</p>
+                    <p class="hero-eyebrow">ELF Labs</p>
+                    <h1 id="hero-title" class="hero-title">Radiant Frequency</h1>
+                    <p class="hero-tagline">Multi-domain AI infrastructure — evidence-backed, deployable, open where it matters</p>
+                    <p class="hero-sub">Seven operational domains: research, RAG deployment, vertical SaaS shells, LoRA services, appliances, Meadow mesh, and IoT edge paths — one architecture, many products.</p>
                     <img class="logo-float" src="assets/logo.png" width="96" height="96" alt="" loading="lazy"
                         decoding="async">
                     <div class="cta-row" aria-label="Primary actions">
-                        <a class="btn btn-primary" href="#research">View research</a>
-                        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+                        <a class="btn btn-primary" href="#lattice">Explore the lattice</a>
+                        <a class="btn btn-ghost" href="pages/vision.html">Read the vision</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="research" class="section" aria-labelledby="research-title">
+        <section id="lattice" class="section" aria-labelledby="lattice-title">
             <div class="section-bg prism" aria-hidden="true"></div>
             <div class="section-scrim" aria-hidden="true"></div>
             <div class="section-inner section-fpattern">
                 <div>
-                    <p class="section-kicker">The prism</p>
-                    <h2 id="research-title" class="section-title">Problem decomposition</h2>
-                    <p class="section-lead">Each stream maps to an actionable research surface: environments, policies,
-                        ensembles, and validators—composed into a single training loop.</p>
+                    <p class="section-kicker">The lattice</p>
+                    <h2 id="lattice-title" class="section-title">Return to the lattice</h2>
+                    <p class="section-lead">Seven facets — same glass-card language, one substrate. Pick a node to read the v2 commercial voice layer.</p>
                 </div>
                 <div></div>
             </div>
             <div class="section-inner">
                 <div class="dashboard-grid">
-                    <article class="glass-card">
-                        <img class="card-icon" src="assets/icons/catalyst_icon.png" alt="" loading="lazy" width="80"
-                            height="80">
-                        <h3 class="card-title">RL environments for LLM self-improvement</h3>
-                        <p class="card-desc">Complete loop: observe → generate → train → evaluate → iterate, with
-                            explicit reward design and offline replay where appropriate.</p>
-                    </article>
-                    <article class="glass-card">
-                        <img class="card-icon" src="assets/icons/pattern_harmonizer_icon.png" alt="" loading="lazy"
-                            width="80" height="80">
-                        <h3 class="card-title">Learned expert selection policy</h3>
-                        <p class="card-desc">Low-rank adapters treated as a discrete action space; routing policy
-                            trained to minimize regret on held-out task distributions.</p>
-                    </article>
-                    <article class="glass-card">
-                        <img class="card-icon" src="assets/icons/weaver_icon.png" alt="" loading="lazy" width="80"
-                            height="80">
-                        <h3 class="card-title">Multi-agent ensemble &amp; disagreement</h3>
-                        <p class="card-desc">Parallel detectors expose epistemic variance; disagreement triggers targeted
-                            exploration consistent with active-learning objectives.</p>
-                    </article>
-                    <article class="glass-card">
-                        <img class="card-icon" src="assets/icons/sentinel_icon.png" alt="" loading="lazy" width="80"
-                            height="80">
-                        <h3 class="card-title">Physics-informed environment model</h3>
-                        <p class="card-desc">PINNs, neural ODEs, and graph surrogates provide cheap rollouts and
-                            feasibility checks before proposals enter the training set.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="measurements" class="section" aria-labelledby="measurements-title">
-            <div class="section-inner section-fpattern">
-                <div>
-                    <p class="section-kicker">Evidence</p>
-                    <h2 id="measurements-title" class="section-title">Measurements</h2>
-                    <p class="section-lead">Reported values are reproducible artifacts, not slogans. Each number ties to
-                        a concrete experiment or cost model.</p>
-                </div>
-            </div>
-            <div class="section-inner">
-                <div class="metrics-grid">
-                    <div class="metric-card">
-                        <div class="metric-value">4.824</div>
-                        <div class="metric-label">Coefficient of variation</div>
-                        <p class="metric-note">Lower CV across bootstrap splits ⇒ more stable policy gradients under
-                            fixed compute.</p>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-value">1.04</div>
-                        <div class="metric-label">Procrustes RMSE</div>
-                        <p class="metric-note">Shape error between learned adapter manifolds and reference embeddings on
-                            aligned bases.</p>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-value">$0.46</div>
-                        <div class="metric-label">Adapter marginal cost</div>
-                        <p class="metric-note">End-to-end $/adapter including data prep, LoRA training, and evaluation on
-                            commodity GPUs.</p>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-value">200K+</div>
-                        <div class="metric-label">Lines of code</div>
-                        <p class="metric-note">Repository-scale engineering surface spanning training, evaluation, and
-                            deployment automation.</p>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-value">$3</div>
-                        <div class="metric-label">Total spend (ablation)</div>
-                        <p class="metric-note">Token-minimal ablations for routing policies; demonstrates frugal
-                            iteration before scaling budgets.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="open-source" class="section" aria-labelledby="opensource-title">
-            <div class="section-inner section-fpattern">
-                <div>
-                    <p class="section-kicker">Artifacts</p>
-                    <h2 id="opensource-title" class="section-title">Open source</h2>
-                    <p class="section-lead">Repositories emphasize evaluation harnesses, reproducible configs, and
-                        narrow-scope tools suitable for extension.</p>
-                </div>
-            </div>
-            <div class="section-inner dashboard-grid">
-                <a class="glass-card" href="https://github.com/ELF-LABS/PIDForge" rel="noopener noreferrer">
-                    <img class="card-icon" src="assets/icons/sage_icon.png" alt="" loading="lazy" width="80" height="80">
-                    <h3 class="card-title">PIDForge</h3>
-                    <p class="card-desc">Field tuning agent and evaluation utilities for closed-loop control tasks with
-                        explicit safety constraints.</p>
-                </a>
-                <article class="glass-card" aria-label="UMA memory diagnostics forthcoming">
-                    <img class="card-icon" src="assets/icons/foundation_icon.png" alt="" loading="lazy" width="80"
-                        height="80">
-                    <h3 class="card-title">UMA memory diagnostics</h3>
-                    <p class="card-desc">Reference containers and probes for unified-memory GPUs; publication pending
-                        with reproducible micro-benchmarks.</p>
-                </article>
-                <a class="glass-card" href="https://github.com/ELF-LABS" rel="noopener noreferrer">
-                    <img class="card-icon" src="assets/icons/connector_icon.png" alt="" loading="lazy" width="80"
-                        height="80">
-                    <h3 class="card-title">Organization</h3>
-                    <p class="card-desc">Additional training stacks, deployment templates, and dataset tooling released
-                        under permissive licenses.</p>
-                </a>
-            </div>
-        </section>
-
-        <section id="infrastructure" class="section" aria-labelledby="infra-title">
-            <div class="section-bg fortress" aria-hidden="true"></div>
-            <div class="section-scrim" aria-hidden="true"></div>
-            <div class="section-inner section-fpattern">
-                <div>
-                    <p class="section-kicker">The fortress</p>
-                    <h2 id="infra-title" class="section-title">Infrastructure</h2>
-                    <p class="section-lead">Heterogeneous accelerators orchestrated with health-gated startup, named
-                        volumes, and reproducible compose profiles—no bespoke snowflakes per machine class.</p>
-                </div>
-            </div>
-            <div class="section-inner">
-                <ul class="stack-list">
-                    <li>Multi-node CPU/GPU mesh with containerized inference and vector stores</li>
-                    <li>Named volumes for Milvus, graph DB, and document stores (no destructive redeploys)</li>
-                    <li>NGC-aligned serving images for Blackwell-class unified memory</li>
-                    <li>One-command bring-up with explicit dependency order and health checks</li>
-                </ul>
-                <figure class="arch-figure" aria-label="High-level system diagram">
-                    <pre>
-┌─────────────┐    metrics     ┌──────────────────┐
-│  Observers  │ ─────────────► │  Reward / safety  │
-└──────┬──────┘                │     filters      │
-       │ logits                └────────┬─────────┘
-       ▼                                │
-┌─────────────┐   adapters    ┌────────▼─────────┐
-│ Policy head │◄──────────────►│  Execution envs  │
-└──────┬──────┘               └────────┬─────────┘
-       │ rollouts                       │
-       ▼                                ▼
-┌─────────────┐               ┌──────────────────┐
-│  Trainers   │──────────────►│  Versioned data  │
-└─────────────┘   checkpoints └──────────────────┘
-                    </pre>
-                </figure>
-            </div>
-        </section>
-
-        <section id="papers" class="section" aria-labelledby="papers-title">
-            <div class="section-inner section-fpattern">
-                <div>
-                    <p class="section-kicker">Publications</p>
-                    <h2 id="papers-title" class="section-title">Papers</h2>
-                    <p class="section-lead">Titles reflect workstreams under review; each will ship with code and
-                        evaluation manifests.</p>
-                </div>
-            </div>
-            <div class="section-inner dashboard-grid">
-                <article class="glass-card">
-                    <span class="badge">Forthcoming</span>
-                    <h3 class="card-title">Disagreement-driven active sampling for LLM critics</h3>
-                    <p class="card-desc">Formalizes ensemble disagreement as an acquisition function with PAC-style
-                        stopping rules.</p>
-                </article>
-                <article class="glass-card">
-                    <span class="badge">Forthcoming</span>
-                    <h3 class="card-title">Routing policies over adapter banks under latency budgets</h3>
-                    <p class="card-desc">Constrained bandit formulation with measured inference-time penalties per
-                        adapter.</p>
-                </article>
-                <article class="glass-card">
-                    <span class="badge">Forthcoming</span>
-                    <h3 class="card-title">Physics-informed gates for synthetic data acceptance</h3>
-                    <p class="card-desc">Surrogate-model violations as hard filters prior to RL fine-tuning stages.</p>
-                </article>
-            </div>
-        </section>
-
-        <section id="contact" class="section" aria-labelledby="contact-title">
-            <div class="section-bg gate" aria-hidden="true"></div>
-            <div class="section-scrim" aria-hidden="true"></div>
-            <div class="section-inner section-fpattern">
-                <div>
-                    <p class="section-kicker">Collaboration</p>
-                    <h2 id="contact-title" class="section-title">Contact</h2>
-                    <p class="section-lead">Open to research collaboration and scoped consulting engagements where RL
-                        methodology, evaluation rigor, and safe deployment are primary concerns.</p>
-                    <div class="cta-row" style="margin-top:clamp(1rem,2vw,1.5rem)">
-                        <a class="btn btn-primary" href="mailto:research@radiantfrequency.xyz">Email</a>
-                        <a class="btn btn-ghost" href="https://github.com/ELF-LABS" rel="noopener noreferrer">GitHub
-                            organization</a>
-                    </div>
+                    <a class="glass-card" href="pages/vision.html">
+                        <img class="card-icon" src="assets/icons/catalyst_icon.png" alt="" loading="lazy" width="80" height="80">
+                        <h3 class="card-title">The Vision</h3>
+                        <p class="card-desc">The Radiant Frequency represents the operational core of ELF Labs: a multi-domain commercial infrastructure designed to bridge high-fidelity AI research with deployable enterprise solutions. It is not a singular…</p>
+                    </a>
+                    <a class="glass-card" href="pages/integration.html">
+                        <img class="card-icon" src="assets/icons/pattern_harmonizer_icon.png" alt="" loading="lazy" width="80" height="80">
+                        <h3 class="card-title">HOW IT ALL CONNECTS</h3>
+                        <p class="card-desc">The Radiant System is not a collection of isolated tools, but a unified multi-domain infrastructure designed to scale intelligence across seven distinct operational vectors. At its core lies a shared substrate of…</p>
+                    </a>
+                    <a class="glass-card" href="pages/security.html">
+                        <img class="card-icon" src="assets/icons/weaver_icon.png" alt="" loading="lazy" width="80" height="80">
+                        <h3 class="card-title">THE SECURITY SUITE</h3>
+                        <p class="card-desc">The Radiant Frequency builds on Zero Trust Architecture (ZTA)—a security model where nothing is trusted by default, and everything must be verified. We have pioneered an additional layer: Cognitive and Emotional…</p>
+                    </a>
+                    <a class="glass-card" href="pages/architecture.html">
+                        <img class="card-icon" src="assets/icons/sentinel_icon.png" alt="" loading="lazy" width="80" height="80">
+                        <h3 class="card-title">THE ARCHITECTURE</h3>
+                        <p class="card-desc">The ELF Labs stack is engineered for autonomous, iterative validation rather than static deployment. Utilizing a multi-LoRA gate architecture, the system executes self-improvement loops that validate behavioral…</p>
+                    </a>
+                    <a class="glass-card" href="pages/development.html">
+                        <img class="card-icon" src="assets/icons/weaver_icon.png" alt="" loading="lazy" width="80" height="80">
+                        <h3 class="card-title">IN DEVELOPMENT</h3>
+                        <p class="card-desc">The Radiant Frequency is an evolving multi-domain infrastructure platform. Apr 2026 is the present anchor: the Apr 9–19, 2026 Fellows sprint is complete, and the items below are ordered by velocity—what is actively…</p>
+                    </a>
+                    <a class="glass-card" href="pages/contact.html">
+                        <img class="card-icon" src="assets/icons/sage_icon.png" alt="" loading="lazy" width="80" height="80">
+                        <h3 class="card-title">CONTACT &amp; FEEDBACK</h3>
+                        <p class="card-desc">The Radiant Frequency operates as a multi-domain commercial entity. We prioritize direct, human-to-human (and human-to-AI) connectivity for enterprise deployment, technical support, and strategic collaboration.…</p>
+                    </a>
+                    <a class="glass-card" href="pages/faq.html">
+                        <img class="card-icon" src="assets/icons/foundation_icon.png" alt="" loading="lazy" width="80" height="80">
+                        <h3 class="card-title">FAQ</h3>
+                        <p class="card-desc">ELF Labs operates as a multi-domain commercial entity specializing in autonomous AI research and enterprise-grade deployment. Our core infrastructure includes a 3-machine owned-local stack featuring a DGX Spark…</p>
+                    </a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
+        <nav class="site-nav" aria-label="Footer lattice" style="justify-content:center;max-width:48rem;margin:0 auto 1rem">
+            <a href="index.html">Home</a>
+            <a href="pages/vision.html">vision</a>
+            <a href="pages/integration.html">integration</a>
+            <a href="pages/security.html">security</a>
+            <a href="pages/architecture.html">architecture</a>
+            <a href="pages/development.html">development</a>
+            <a href="pages/contact.html">contact</a>
+            <a href="pages/faq.html">faq</a>
+        </nav>
         <p>© <span id="y"></span> ELF Labs · <span class="mono">radiantfrequency.xyz</span></p>
         <p>Emmelina Luna Fugler · Independent Researcher</p>
     </footer>
 
     <div class="mobile-cta-bar" role="navigation" aria-label="Quick actions">
-        <a class="btn btn-primary" href="#research">Research</a>
-        <a class="btn btn-ghost" href="mailto:research@radiantfrequency.xyz">Email</a>
+        <a class="btn btn-primary" href="#lattice">Lattice</a>
+        <a class="btn btn-ghost" href="pages/contact.html">Contact</a>
     </div>
 
     <script>
